@@ -14,6 +14,20 @@ const Styles = StyleSheet.create({
     justifyContent : 'center',
     backgroundColor : '#4c69a5'
   },
+  newtomate : {
+    fontSize : responsiveFontSize(2.8),
+    textAlign : 'center',
+    padding : 10,
+    color : '#42f459',
+    backgroundColor : '#323533',
+    margin : 10
+  },
+  simpletext : {
+    fontSize : responsiveFontSize(3),
+    textAlign : 'center',
+    padding : 5,
+    color : '#000'
+  },
   dlnumber : {
       textAlign: 'center',
       marginHorizontal: 10,

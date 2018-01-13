@@ -19,6 +19,7 @@ import { View,
 import logo from '../assets/mate.jpg';
 import { connect } from 'react-redux';
 import {FetchUser} from '../actions/FetchUser';
+import {Actions} from 'react-native-router-flux';
 const window = Dimensions.get('window');
 
 const IMAGE_HEIGHT = window.width / 2;
@@ -104,6 +105,9 @@ class User extends React.Component {
       }
       else {
         this.props.FetchUser(this.state.username);
+        this.setState({usernameReq: true});
+        this.setState({passwordReq : true});
+        this.setState({colorReq : '#55d841'});
       }
     }
 
@@ -112,13 +116,21 @@ class User extends React.Component {
           this.setState({usernameReq: false});
           this.setState({colorReq : '#ea3131'});
         }
+        else {
+          this.setState({usernameReq: true});
+          this.setState({colorReq : '#55d841'});
+        }
       }
 
       checkIfPasswordEmptyOnBlur() {
-        if(this.state.username == '') {
+        if(this.state.password == '') {
           this.setState({passwordReq: false});
           this.setState({colorReq : '#ea3131'});
-      }
+        }
+        else {
+          this.setState({passwordReq: true});
+          this.setState({colorReq : '#55d841'});
+        }
     }
 
     render() {
@@ -129,7 +141,7 @@ class User extends React.Component {
       return(
         <View style={Styles.container}>
           <Animated.Image source={logo} style={[Styles.logo, { height: this.imageHeight }]} />
-          <ScrollView style={{flex: 1}}>
+          <ScrollView style={{flex: 1}} contentContainerStyle={{justifyContent: 'center'}}>
             <KeyboardAvoidingView behaviour='padding' style={{alignItems:'center'}}>
               <TextInput
                 placeholder = "Enter Username"
@@ -161,9 +173,10 @@ class User extends React.Component {
                     <Text>Licensenumber: {data.licensenumber}</Text>
                     <Text>User: {data.name}</Text>
                   </View>
-                }
+              }
             </KeyboardAvoidingView>
           </ScrollView>
+          <Text style={Styles.newtomate} onPress={() => Actions.UserRegistration()}>New to MATE?</Text>
         </View>
       )
     }
