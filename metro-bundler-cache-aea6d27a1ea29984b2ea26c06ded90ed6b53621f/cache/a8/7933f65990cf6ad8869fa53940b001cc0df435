@@ -1,0 +1,15 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _redux = require('redux');
+
+var _FetchUserReducer = require('./FetchUserReducer');
+
+var _FetchUserReducer2 = _interopRequireDefault(_FetchUserReducer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _redux.combineReducers)({
+  user: _FetchUserReducer2.default
+});

@@ -1,0 +1,38 @@
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.FetchUser = FetchUser;
+exports.fetchOnClick = fetchOnClick;
+
+var _client = require('../client');
+
+var _client2 = _interopRequireDefault(_client);
+
+var _queries = require('./graphql/queries');
+
+var _ActionTypes = require('../utils/ActionTypes');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function FetchUser(licensenumber) {
+	return function (dispatch) {
+		dispatch({ type: _ActionTypes.FETCHING_USER });
+		_client2.default.query({
+			query: _queries.getRetailer,
+			variables: {
+				licensenumber: licensenumber
+			}
+		}).then(function (resp) {
+			if (resp.data) {
+				dispatch({ type: _ActionTypes.FETCHING_USER_SUCCESS, payload: resp.data.Retailer });
+			}
+		}).catch(function (err) {
+			console.log(err);
+			dispatch({ type: _ActionTypes.FETCHING_USER_FAILURE, payload: null });
+		});
+	};
+}
+
+function fetchOnClick() {
+	return dispatch(FetchUser());
+}

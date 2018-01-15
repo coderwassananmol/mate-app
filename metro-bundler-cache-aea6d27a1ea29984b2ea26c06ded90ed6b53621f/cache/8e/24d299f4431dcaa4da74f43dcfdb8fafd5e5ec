@@ -1,0 +1,16 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _apolloClient = require('apollo-client');
+
+var _apolloLinkHttp = require('apollo-link-http');
+
+var _apolloCacheInmemory = require('apollo-cache-inmemory');
+
+var client = new _apolloClient.ApolloClient({
+  link: new _apolloLinkHttp.HttpLink({ uri: 'https://api.graph.cool/simple/v1/cjc60bx1m17rf0148ml7khqrd' }),
+  cache: new _apolloCacheInmemory.InMemoryCache()
+});
+
+exports.default = client;

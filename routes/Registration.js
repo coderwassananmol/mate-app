@@ -17,7 +17,6 @@ import { View,
         ActivityIndicator
       } from 'react-native';
 import { connect } from 'react-redux';
-import ParallaxScrollView from 'react-native-parallax-scroll-view';
 
 export default class Registration extends React.Component {
   constructor(props) {

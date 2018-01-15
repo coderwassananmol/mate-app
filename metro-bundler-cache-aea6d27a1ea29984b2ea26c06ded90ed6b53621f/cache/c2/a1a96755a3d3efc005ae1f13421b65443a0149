@@ -1,0 +1,6 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var FETCHING_USER = exports.FETCHING_USER = 'FETCHING_USER';
+var FETCHING_USER_SUCCESS = exports.FETCHING_USER_SUCCESS = 'FETCHING_USER_SUCCESS';
+var FETCHING_USER_FAILURE = exports.FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE';

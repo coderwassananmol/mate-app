@@ -23,10 +23,9 @@ const Styles = StyleSheet.create({
     margin : 10
   },
   simpletext : {
-    fontSize : responsiveFontSize(3),
+    fontSize : responsiveFontSize(2.3),
     textAlign : 'center',
-    padding : 5,
-    color : '#000'
+    padding : 5
   },
   dlnumber : {
       textAlign: 'center',

@@ -1,0 +1,532 @@
+var _react2 = require('react');
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require('./../../react-transform-hmr/lib/index.js');
+
+var _index2 = _interopRequireDefault(_index);
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jsxFileName = '/home/wassan/mate-app/node_modules/react-native-parallax-scroll-view/src/index.js';
+
+var _reactNative = require('react-native');
+
+var _propTypes = require('prop-types');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+	ParallaxScrollView: {
+		displayName: 'ParallaxScrollView'
+	}
+};
+
+var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
+	filename: '/home/wassan/mate-app/node_modules/react-native-parallax-scroll-view/src/index.js',
+	components: _components,
+	locals: [module],
+	imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+	return function (Component) {
+		return _reactTransformHmrLibIndexJs2(Component, id);
+	};
+}
+
+var styles = require('./styles');
+
+var window = _reactNative.Dimensions.get('window');
+
+var SCROLLVIEW_REF = 'ScrollView';
+
+var pivotPoint = function pivotPoint(a, b) {
+	return a - b;
+};
+
+var renderEmpty = function renderEmpty() {
+	return _react3.default.createElement(_reactNative.View, {
+		__source: {
+			fileName: _jsxFileName,
+			lineNumber: 14
+		}
+	});
+};
+
+var interpolate = function interpolate(value, opts) {
+	var x = value.interpolate(opts);
+	x.toJSON = function () {
+		return x.__getValue();
+	};
+	return x;
+};
+
+var IPropTypes = {
+	backgroundColor: _propTypes.string,
+	backgroundScrollSpeed: _propTypes.number,
+	fadeOutForeground: _propTypes.bool,
+	fadeOutBackground: _propTypes.bool,
+	contentBackgroundColor: _propTypes.string,
+	onChangeHeaderVisibility: _propTypes.func,
+	parallaxHeaderHeight: _propTypes.number.isRequired,
+	renderBackground: _propTypes.func,
+	renderFixedHeader: _propTypes.func,
+	renderForeground: _propTypes.func,
+	renderScrollComponent: _propTypes.func,
+	renderStickyHeader: _propTypes.func,
+	stickyHeaderHeight: _propTypes.number,
+	contentContainerStyle: _reactNative.ViewPropTypes.style,
+	outputScaleValue: _propTypes.number
+};
+
+var ParallaxScrollView = _wrapComponent('ParallaxScrollView')(function (_Component) {
+	_inherits(ParallaxScrollView, _Component);
+
+	function ParallaxScrollView(props) {
+		_classCallCheck(this, ParallaxScrollView);
+
+		var _this = _possibleConstructorReturn(this, (ParallaxScrollView.__proto__ || Object.getPrototypeOf(ParallaxScrollView)).call(this, props));
+
+		_this.animatedEvent = _reactNative.Animated.event([{ nativeEvent: { contentOffset: { y: _this.scrollY } } }], { useNativeDriver: true });
+
+		if (props.renderStickyHeader && !props.stickyHeaderHeight) {
+			console.warn('Property `stickyHeaderHeight` must be set if `renderStickyHeader` is used.');
+		}
+		if (props.renderParallaxHeader !== renderEmpty && !props.renderForeground) {
+			console.warn('Property `renderParallaxHeader` is deprecated. Use `renderForeground` instead.');
+		}
+		_this.state = {
+			scrollY: new _reactNative.Animated.Value(0),
+			viewHeight: window.height,
+			viewWidth: window.width
+		};
+		_this.scrollY = new _reactNative.Animated.Value(0);
+		_this._footerComponent = {
+			setNativeProps: function setNativeProps() {}
+		};
+		_this._footerHeight = 0;
+		return _this;
+	}
+
+	_createClass(ParallaxScrollView, [{
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			var _props = this.props,
+			    backgroundColor = _props.backgroundColor,
+			    backgroundScrollSpeed = _props.backgroundScrollSpeed,
+			    children = _props.children,
+			    contentBackgroundColor = _props.contentBackgroundColor,
+			    fadeOutForeground = _props.fadeOutForeground,
+			    fadeOutBackground = _props.fadeOutBackground,
+			    parallaxHeaderHeight = _props.parallaxHeaderHeight,
+			    renderBackground = _props.renderBackground,
+			    renderFixedHeader = _props.renderFixedHeader,
+			    renderForeground = _props.renderForeground,
+			    renderParallaxHeader = _props.renderParallaxHeader,
+			    renderScrollComponent = _props.renderScrollComponent,
+			    renderStickyHeader = _props.renderStickyHeader,
+			    stickyHeaderHeight = _props.stickyHeaderHeight,
+			    style = _props.style,
+			    contentContainerStyle = _props.contentContainerStyle,
+			    outputScaleValue = _props.outputScaleValue,
+			    scrollViewProps = _objectWithoutProperties(_props, ['backgroundColor', 'backgroundScrollSpeed', 'children', 'contentBackgroundColor', 'fadeOutForeground', 'fadeOutBackground', 'parallaxHeaderHeight', 'renderBackground', 'renderFixedHeader', 'renderForeground', 'renderParallaxHeader', 'renderScrollComponent', 'renderStickyHeader', 'stickyHeaderHeight', 'style', 'contentContainerStyle', 'outputScaleValue']);
+
+			var background = this._renderBackground({
+				fadeOutBackground: fadeOutBackground,
+				backgroundScrollSpeed: backgroundScrollSpeed,
+				backgroundColor: backgroundColor,
+				parallaxHeaderHeight: parallaxHeaderHeight,
+				stickyHeaderHeight: stickyHeaderHeight,
+				renderBackground: renderBackground,
+				outputScaleValue: outputScaleValue
+			});
+			var foreground = this._renderForeground({
+				fadeOutForeground: fadeOutForeground,
+				parallaxHeaderHeight: parallaxHeaderHeight,
+				stickyHeaderHeight: stickyHeaderHeight,
+				renderForeground: renderForeground || renderParallaxHeader
+			});
+			var bodyComponent = this._wrapChildren(children, {
+				contentBackgroundColor: contentBackgroundColor,
+				stickyHeaderHeight: stickyHeaderHeight,
+				contentContainerStyle: contentContainerStyle
+			});
+			var footerSpacer = this._renderFooterSpacer({ contentBackgroundColor: contentBackgroundColor });
+			var maybeStickyHeader = this._maybeRenderStickyHeader({
+				parallaxHeaderHeight: parallaxHeaderHeight,
+				stickyHeaderHeight: stickyHeaderHeight,
+				backgroundColor: backgroundColor,
+				renderFixedHeader: renderFixedHeader,
+				renderStickyHeader: renderStickyHeader
+			});
+			var scrollElement = renderScrollComponent(scrollViewProps);
+			return _react3.default.createElement(
+				_reactNative.View,
+				{
+					style: [style, styles.container],
+					onLayout: function onLayout(e) {
+						return _this2._maybeUpdateViewDimensions(e);
+					},
+					__source: {
+						fileName: _jsxFileName,
+						lineNumber: 124
+					}
+				},
+				background,
+				_react3.default.cloneElement(scrollElement, {
+					ref: SCROLLVIEW_REF,
+					style: [styles.scrollView, scrollElement.props.style],
+					scrollEventThrottle: 1,
+
+					onScroll: _reactNative.Animated.event([{ nativeEvent: { contentOffset: { y: this.scrollY } } }], { useNativeDriver: true, listener: this._onScroll.bind(this) })
+				}, foreground, bodyComponent, footerSpacer),
+				maybeStickyHeader
+			);
+		}
+	}, {
+		key: 'getScrollResponder',
+		value: function getScrollResponder() {
+			return this.refs[SCROLLVIEW_REF]._component.getScrollResponder();
+		}
+	}, {
+		key: 'getScrollableNode',
+		value: function getScrollableNode() {
+			return this.getScrollResponder().getScrollableNode();
+		}
+	}, {
+		key: 'getInnerViewNode',
+		value: function getInnerViewNode() {
+			return this.getScrollResponder().getInnerViewNode();
+		}
+	}, {
+		key: 'scrollTo',
+		value: function scrollTo() {
+			var _getScrollResponder;
+
+			(_getScrollResponder = this.getScrollResponder()).scrollTo.apply(_getScrollResponder, arguments);
+		}
+	}, {
+		key: 'setNativeProps',
+		value: function setNativeProps(props) {
+			this.refs[SCROLLVIEW_REF].setNativeProps(props);
+		}
+	}, {
+		key: '_onScroll',
+		value: function _onScroll(e) {
+			var _props2 = this.props,
+			    parallaxHeaderHeight = _props2.parallaxHeaderHeight,
+			    stickyHeaderHeight = _props2.stickyHeaderHeight,
+			    onChangeHeaderVisibility = _props2.onChangeHeaderVisibility,
+			    _props2$onScroll = _props2.onScroll,
+			    prevOnScroll = _props2$onScroll === undefined ? function (e) {} : _props2$onScroll;
+
+
+			var p = pivotPoint(parallaxHeaderHeight, stickyHeaderHeight);
+
+			if (e.nativeEvent.contentOffset.y >= p) {
+				onChangeHeaderVisibility(false);
+			} else {
+				onChangeHeaderVisibility(true);
+			}
+
+			prevOnScroll(e);
+		}
+	}, {
+		key: '_maybeUpdateScrollPosition',
+		value: function _maybeUpdateScrollPosition(e) {
+			var _props3 = this.props,
+			    parallaxHeaderHeight = _props3.parallaxHeaderHeight,
+			    stickyHeaderHeight = _props3.stickyHeaderHeight;
+			var scrollY = this.scrollY;
+			var offsetY = e.nativeEvent.contentOffset.y;
+
+			var p = pivotPoint(parallaxHeaderHeight, stickyHeaderHeight);
+			if (offsetY <= p || scrollY._value <= p) {
+				scrollY.setValue(offsetY);
+			}
+		}
+	}, {
+		key: '_maybeUpdateViewDimensions',
+		value: function _maybeUpdateViewDimensions(e) {
+			var _e$nativeEvent$layout = e.nativeEvent.layout,
+			    width = _e$nativeEvent$layout.width,
+			    height = _e$nativeEvent$layout.height;
+
+
+			if (width !== this.state.viewWidth || height !== this.state.viewHeight) {
+				this.setState({
+					viewWidth: width,
+					viewHeight: height
+				});
+			}
+		}
+	}, {
+		key: '_renderBackground',
+		value: function _renderBackground(_ref) {
+			var fadeOutBackground = _ref.fadeOutBackground,
+			    backgroundScrollSpeed = _ref.backgroundScrollSpeed,
+			    backgroundColor = _ref.backgroundColor,
+			    parallaxHeaderHeight = _ref.parallaxHeaderHeight,
+			    stickyHeaderHeight = _ref.stickyHeaderHeight,
+			    renderBackground = _ref.renderBackground,
+			    outputScaleValue = _ref.outputScaleValue;
+			var _state = this.state,
+			    viewWidth = _state.viewWidth,
+			    viewHeight = _state.viewHeight;
+			var scrollY = this.scrollY;
+
+			var p = pivotPoint(parallaxHeaderHeight, stickyHeaderHeight);
+			return _react3.default.createElement(
+				_reactNative.Animated.View,
+				{
+					style: [styles.backgroundImage, {
+						backgroundColor: backgroundColor,
+						height: parallaxHeaderHeight,
+						width: viewWidth,
+						opacity: fadeOutBackground ? interpolate(scrollY, {
+							inputRange: [0, p * (1 / 2), p * (3 / 4), p],
+							outputRange: [1, 0.3, 0.1, 0],
+							extrapolate: 'clamp'
+						}) : 1,
+						transform: [{
+							translateY: interpolate(scrollY, {
+								inputRange: [0, p],
+								outputRange: [0, -(p / backgroundScrollSpeed)],
+								extrapolateRight: 'extend',
+								extrapolateLeft: 'clamp'
+							})
+						}, {
+							scale: interpolate(scrollY, {
+								inputRange: [-viewHeight, 0],
+								outputRange: [outputScaleValue, 1],
+								extrapolate: 'clamp'
+							})
+						}]
+					}],
+					__source: {
+						fileName: _jsxFileName,
+						lineNumber: 232
+					}
+				},
+				_react3.default.createElement(
+					_reactNative.View,
+					{
+						__source: {
+							fileName: _jsxFileName,
+							lineNumber: 266
+						}
+					},
+					renderBackground()
+				)
+			);
+		}
+	}, {
+		key: '_renderForeground',
+		value: function _renderForeground(_ref2) {
+			var fadeOutForeground = _ref2.fadeOutForeground,
+			    parallaxHeaderHeight = _ref2.parallaxHeaderHeight,
+			    stickyHeaderHeight = _ref2.stickyHeaderHeight,
+			    renderForeground = _ref2.renderForeground;
+			var scrollY = this.scrollY;
+
+			var p = pivotPoint(parallaxHeaderHeight, stickyHeaderHeight);
+			return _react3.default.createElement(
+				_reactNative.View,
+				{ style: styles.parallaxHeaderContainer, __source: {
+						fileName: _jsxFileName,
+						lineNumber: 282
+					}
+				},
+				_react3.default.createElement(
+					_reactNative.Animated.View,
+					{
+						style: [styles.parallaxHeader, {
+							height: parallaxHeaderHeight,
+							opacity: fadeOutForeground ? interpolate(scrollY, {
+								inputRange: [0, p * (1 / 2), p * (3 / 4), p],
+								outputRange: [1, 0.3, 0.1, 0],
+								extrapolate: 'clamp'
+							}) : 1
+						}],
+						__source: {
+							fileName: _jsxFileName,
+							lineNumber: 283
+						}
+					},
+					_react3.default.createElement(
+						_reactNative.View,
+						{ style: { height: parallaxHeaderHeight }, __source: {
+								fileName: _jsxFileName,
+								lineNumber: 298
+							}
+						},
+						renderForeground()
+					)
+				)
+			);
+		}
+	}, {
+		key: '_wrapChildren',
+		value: function _wrapChildren(children, _ref3) {
+			var _this3 = this;
+
+			var contentBackgroundColor = _ref3.contentBackgroundColor,
+			    stickyHeaderHeight = _ref3.stickyHeaderHeight,
+			    contentContainerStyle = _ref3.contentContainerStyle;
+			var viewHeight = this.state.viewHeight;
+
+			var containerStyles = [{ backgroundColor: contentBackgroundColor }];
+
+			if (contentContainerStyle) containerStyles.push(contentContainerStyle);
+
+			return _react3.default.createElement(
+				_reactNative.View,
+				{
+					style: containerStyles,
+					onLayout: function onLayout(e) {
+						var height = e.nativeEvent.layout.height;
+
+						var footerHeight = Math.max(0, viewHeight - height - stickyHeaderHeight);
+						if (_this3._footerHeight !== footerHeight) {
+							_this3._footerComponent.setNativeProps({
+								style: { height: footerHeight }
+							});
+							_this3._footerHeight = footerHeight;
+						}
+					},
+					__source: {
+						fileName: _jsxFileName,
+						lineNumber: 316
+					}
+				},
+				children
+			);
+		}
+	}, {
+		key: '_renderFooterSpacer',
+		value: function _renderFooterSpacer(_ref4) {
+			var _this4 = this;
+
+			var contentBackgroundColor = _ref4.contentBackgroundColor;
+
+			return _react3.default.createElement(_reactNative.View, {
+				ref: function ref(_ref5) {
+					return _this4._footerComponent = _ref5;
+				},
+				style: { backgroundColor: contentBackgroundColor },
+				__source: {
+					fileName: _jsxFileName,
+					lineNumber: 340
+				}
+			});
+		}
+	}, {
+		key: '_maybeRenderStickyHeader',
+		value: function _maybeRenderStickyHeader(_ref6) {
+			var parallaxHeaderHeight = _ref6.parallaxHeaderHeight,
+			    stickyHeaderHeight = _ref6.stickyHeaderHeight,
+			    backgroundColor = _ref6.backgroundColor,
+			    renderFixedHeader = _ref6.renderFixedHeader,
+			    renderStickyHeader = _ref6.renderStickyHeader;
+			var viewWidth = this.state.viewWidth;
+			var scrollY = this.scrollY;
+
+			if (renderStickyHeader || renderFixedHeader) {
+				var p = pivotPoint(parallaxHeaderHeight, stickyHeaderHeight);
+				return _react3.default.createElement(
+					_reactNative.View,
+					{
+						style: [styles.stickyHeader, _extends({
+							width: viewWidth
+						}, stickyHeaderHeight ? { height: stickyHeaderHeight } : null)],
+						__source: {
+							fileName: _jsxFileName,
+							lineNumber: 359
+						}
+					},
+					renderStickyHeader ? _react3.default.createElement(
+						_reactNative.Animated.View,
+						{
+							style: {
+								backgroundColor: backgroundColor,
+								height: stickyHeaderHeight,
+								opacity: interpolate(scrollY, {
+									inputRange: [0, p],
+									outputRange: [0, 1],
+									extrapolate: 'clamp'
+								})
+							},
+							__source: {
+								fileName: _jsxFileName,
+								lineNumber: 369
+							}
+						},
+						_react3.default.createElement(
+							_reactNative.Animated.View,
+							{
+								style: {
+									transform: [{
+										translateY: interpolate(scrollY, {
+											inputRange: [0, p],
+											outputRange: [stickyHeaderHeight, 0],
+											extrapolate: 'clamp'
+										})
+									}]
+								},
+								__source: {
+									fileName: _jsxFileName,
+									lineNumber: 380
+								}
+							},
+							renderStickyHeader()
+						)
+					) : null,
+					renderFixedHeader && renderFixedHeader()
+				);
+			} else {
+				return null;
+			}
+		}
+	}]);
+
+	return ParallaxScrollView;
+}(_react2.Component));
+
+ParallaxScrollView.propTypes = IPropTypes;
+
+ParallaxScrollView.defaultProps = {
+	backgroundScrollSpeed: 5,
+	backgroundColor: '#000',
+	contentBackgroundColor: '#fff',
+	fadeOutForeground: true,
+	onChangeHeaderVisibility: function onChangeHeaderVisibility() {},
+	renderScrollComponent: function renderScrollComponent(props) {
+		return _react3.default.createElement(_reactNative.Animated.ScrollView, _extends({}, props, {
+			__source: {
+				fileName: _jsxFileName,
+				lineNumber: 414
+			}
+		}));
+	},
+	renderBackground: renderEmpty,
+	renderParallaxHeader: renderEmpty,
+	renderForeground: null,
+	stickyHeaderHeight: 0,
+	contentContainerStyle: null,
+	outputScaleValue: 5
+};
+
+module.exports = ParallaxScrollView;

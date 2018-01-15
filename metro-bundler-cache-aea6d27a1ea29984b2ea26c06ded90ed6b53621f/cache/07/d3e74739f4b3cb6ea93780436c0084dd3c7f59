@@ -1,0 +1,376 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react2 = require('react');
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require('./../node_modules/react-transform-hmr/lib/index.js');
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = '/home/wassan/mate-app/routes/User.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _expo = require('expo');
+
+var _AppLoading = require('expo/src/launch/AppLoading');
+
+var _AppLoading2 = _interopRequireDefault(_AppLoading);
+
+var _RetailerStyle = require('../styles/RetailerStyle');
+
+var _RetailerStyle2 = _interopRequireDefault(_RetailerStyle);
+
+var _reactNative = require('react-native');
+
+var _mate = require('../assets/mate.jpg');
+
+var _mate2 = _interopRequireDefault(_mate);
+
+var _reactRedux = require('react-redux');
+
+var _FetchUser = require('../actions/FetchUser');
+
+var _reactNativeRouterFlux = require('react-native-router-flux');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+  User: {
+    displayName: 'User'
+  }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+  filename: '/home/wassan/mate-app/routes/User.js',
+  components: _components,
+  locals: [module],
+  imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+  return function (Component) {
+    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+  };
+}
+
+var window = _reactNative.Dimensions.get('window');
+
+var IMAGE_HEIGHT = window.width / 2;
+var IMAGE_HEIGHT_SMALL = window.width / 5;
+
+var User = _wrapComponent('User')(function (_React$Component) {
+  _inherits(User, _React$Component);
+
+  function User(props) {
+    _classCallCheck(this, User);
+
+    var _this = _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).call(this, props));
+
+    _this.keyboardWillShow = function (event) {
+      _reactNative.Animated.timing(_this.imageHeight, {
+        duration: event.duration,
+        toValue: IMAGE_HEIGHT_SMALL
+      }).start();
+    };
+
+    _this.keyboardWillHide = function (event) {
+      _reactNative.Animated.timing(_this.imageHeight, {
+        duration: event.duration,
+        toValue: IMAGE_HEIGHT
+      }).start();
+    };
+
+    _this.keyboardDidShow = function (event) {
+      _reactNative.Animated.timing(_this.imageHeight, {
+        toValue: IMAGE_HEIGHT_SMALL
+      }).start();
+    };
+
+    _this.keyboardDidHide = function (event) {
+      _reactNative.Animated.timing(_this.imageHeight, {
+        toValue: IMAGE_HEIGHT
+      }).start();
+    };
+
+    _this.state = {
+      fontLoaded: false,
+      clicked: false
+    };
+    _this.imageHeight = new _reactNative.Animated.Value(IMAGE_HEIGHT);
+    return _this;
+  }
+
+  _createClass(User, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      (function _callee() {
+        return regeneratorRuntime.async(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return regeneratorRuntime.awrap(_expo.Font.loadAsync({
+                  'raleway-light': require('../assets/fonts/Raleway-Light.ttf'),
+                  'raleway-medium': require('../assets/fonts/Raleway-Medium.ttf')
+                }));
+
+              case 2:
+                _this2.setState({
+                  fontLoaded: true,
+                  username: '',
+                  password: '',
+                  usernameReq: true,
+                  passwordReq: true,
+                  colorReq: '#55d841'
+                });
+
+              case 3:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, null, _this2);
+      })();
+
+      if (_reactNative.Platform.OS == 'ios') {
+        this.keyboardWillShowSub = _reactNative.Keyboard.addListener('keyboardWillShow', this.keyboardWillShow);
+        this.keyboardWillHideSub = _reactNative.Keyboard.addListener('keyboardWillHide', this.keyboardWillHide);
+      } else {
+        this.keyboardWillShowSub = _reactNative.Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
+        this.keyboardWillHideSub = _reactNative.Keyboard.addListener('keyboardDidHide', this.keyboardDidHide);
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.keyboardWillShowSub.remove();
+      this.keyboardWillHideSub.remove();
+    }
+  }, {
+    key: 'checkIfEmpty',
+    value: function checkIfEmpty() {
+      if (this.state.username == '' || this.state.password == '') {
+        if (this.state.username == '') {
+          this.setState({ usernameReq: false });
+          this.setState({ colorReq: '#ea3131' });
+        }
+        if (this.state.password == '') {
+          this.setState({ passwordReq: false });
+          this.setState({ colorReq: '#ea3131' });
+        }
+      } else {
+        this.props.FetchUser(this.state.username);
+        this.setState({ usernameReq: true });
+        this.setState({ passwordReq: true });
+        this.setState({ colorReq: '#55d841' });
+      }
+    }
+  }, {
+    key: 'checkIfUsernameEmptyOnBlur',
+    value: function checkIfUsernameEmptyOnBlur() {
+      if (this.state.username == '') {
+        this.setState({ usernameReq: false });
+        this.setState({ colorReq: '#ea3131' });
+      } else {
+        this.setState({ usernameReq: true });
+        this.setState({ colorReq: '#55d841' });
+      }
+    }
+  }, {
+    key: 'checkIfPasswordEmptyOnBlur',
+    value: function checkIfPasswordEmptyOnBlur() {
+      if (this.state.password == '') {
+        this.setState({ passwordReq: false });
+        this.setState({ colorReq: '#ea3131' });
+      } else {
+        this.setState({ passwordReq: true });
+        this.setState({ colorReq: '#55d841' });
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      var _props$user = this.props.user,
+          isFetching = _props$user.isFetching,
+          data = _props$user.data;
+
+      if (!this.state.fontLoaded) {
+        return _react3.default.createElement(_AppLoading2.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 139
+          }
+        });
+      }
+      return _react3.default.createElement(
+        _reactNative.View,
+        { style: _RetailerStyle2.default.container, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 142
+          }
+        },
+        _react3.default.createElement(_reactNative.Animated.Image, { source: _mate2.default, style: [_RetailerStyle2.default.logo, { height: this.imageHeight }], __source: {
+            fileName: _jsxFileName,
+            lineNumber: 143
+          }
+        }),
+        _react3.default.createElement(
+          _reactNative.ScrollView,
+          { style: { flex: 1 }, contentContainerStyle: { justifyContent: 'center' }, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 144
+            }
+          },
+          _react3.default.createElement(
+            _reactNative.KeyboardAvoidingView,
+            { behaviour: 'padding', style: { alignItems: 'center' }, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 145
+              }
+            },
+            _react3.default.createElement(_reactNative.TextInput, {
+              placeholder: 'Enter Username',
+              style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+              onChangeText: function onChangeText(username) {
+                return _this3.setState({ username: username });
+              },
+              underlineColorAndroid: this.state.colorReq,
+              onBlur: this.checkIfUsernameEmptyOnBlur.bind(this),
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 146
+              }
+            }),
+            !this.state.usernameReq ? _react3.default.createElement(
+              _reactNative.Text,
+              { style: { color: '#ea3131' }, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 153
+                }
+              },
+              '* REQUIRED'
+            ) : null,
+            _react3.default.createElement(_reactNative.TextInput, {
+              placeholder: 'Enter Password',
+              style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+              onChangeText: function onChangeText(password) {
+                return _this3.setState({ password: password });
+              },
+              underlineColorAndroid: this.state.colorReq,
+              onBlur: this.checkIfUsernameEmptyOnBlur.bind(this),
+              secureTextEntry: true,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 154
+              }
+            }),
+            !this.state.passwordReq ? _react3.default.createElement(
+              _reactNative.Text,
+              { style: { color: '#ea3131' }, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 162
+                }
+              },
+              '* REQUIRED'
+            ) : null,
+            _react3.default.createElement(
+              _reactNative.TouchableHighlight,
+              { style: _RetailerStyle2.default.button, onPress: this.checkIfEmpty.bind(this), __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 163
+                }
+              },
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: [_RetailerStyle2.default.buttonText, { fontFamily: 'raleway-medium' }], __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 164
+                  }
+                },
+                'SUBMIT'
+              )
+            ),
+            isFetching == null ? null : isFetching ? _react3.default.createElement(
+              _reactNative.View,
+              { style: _RetailerStyle2.default.container, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 169
+                }
+              },
+              _react3.default.createElement(_reactNative.ActivityIndicator, {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 170
+                }
+              })
+            ) : _react3.default.createElement(
+              _reactNative.View,
+              { style: _RetailerStyle2.default.container, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 172
+                }
+              },
+              _react3.default.createElement(
+                _reactNative.Text,
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 173
+                  }
+                },
+                'Licensenumber: ',
+                data.licensenumber
+              ),
+              _react3.default.createElement(
+                _reactNative.Text,
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 174
+                  }
+                },
+                'User: ',
+                data.name
+              )
+            )
+          )
+        ),
+        _react3.default.createElement(
+          _reactNative.Text,
+          { style: _RetailerStyle2.default.newtomate, onPress: function onPress() {
+              return _reactNativeRouterFlux.Actions.UserRegistration();
+            }, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 179
+            }
+          },
+          'New to MATE?'
+        )
+      );
+    }
+  }]);
+
+  return User;
+}(_react3.default.Component));
+
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  };
+}
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, { FetchUser: _FetchUser.FetchUser })(User);

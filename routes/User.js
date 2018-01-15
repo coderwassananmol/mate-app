@@ -176,7 +176,7 @@ class User extends React.Component {
               }
             </KeyboardAvoidingView>
           </ScrollView>
-          <Text style={Styles.newtomate} onPress={() => Actions.UserRegistration()}>New to MATE?</Text>
+          <Text style={Styles.newtomate} onPress={() => Actions.EmailRegistration()}>New to MATE?</Text>
         </View>
       )
     }

@@ -1,0 +1,299 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react2 = require('react');
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require('./../node_modules/react-transform-hmr/lib/index.js');
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = '/home/wassan/mate-app/routes/Registration.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _expo = require('expo');
+
+var _AppLoading = require('expo/src/launch/AppLoading');
+
+var _AppLoading2 = _interopRequireDefault(_AppLoading);
+
+var _RetailerStyle = require('../styles/RetailerStyle');
+
+var _RetailerStyle2 = _interopRequireDefault(_RetailerStyle);
+
+var _reactNative = require('react-native');
+
+var _reactRedux = require('react-redux');
+
+var _reactNativeParallaxScrollView = require('react-native-parallax-scroll-view');
+
+var _reactNativeParallaxScrollView2 = _interopRequireDefault(_reactNativeParallaxScrollView);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+  Registration: {
+    displayName: 'Registration'
+  }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+  filename: '/home/wassan/mate-app/routes/Registration.js',
+  components: _components,
+  locals: [module],
+  imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+  return function (Component) {
+    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+  };
+}
+
+var Registration = _wrapComponent('Registration')(function (_React$Component) {
+  _inherits(Registration, _React$Component);
+
+  function Registration(props) {
+    _classCallCheck(this, Registration);
+
+    var _this = _possibleConstructorReturn(this, (Registration.__proto__ || Object.getPrototypeOf(Registration)).call(this, props));
+
+    _this.state = {
+      fontLoaded: false,
+      clicked: false
+    };
+    return _this;
+  }
+
+  _createClass(Registration, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      (function _callee() {
+        return regeneratorRuntime.async(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return regeneratorRuntime.awrap(_expo.Font.loadAsync({
+                  'raleway-light': require('../assets/fonts/Raleway-Light.ttf'),
+                  'raleway-medium': require('../assets/fonts/Raleway-Medium.ttf')
+                }));
+
+              case 2:
+                _this2.setState({
+                  fontLoaded: true
+                });
+
+              case 3:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, null, _this2);
+      })();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      if (!this.state.fontLoaded) {
+        return _react3.default.createElement(_AppLoading2.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45
+          }
+        });
+      }
+      return _react3.default.createElement(
+        _reactNative.ScrollView,
+        { style: { flex: 1 }, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52
+          }
+        },
+        _react3.default.createElement(
+          _reactNative.KeyboardAvoidingView,
+          { style: _RetailerStyle2.default.container, behaviour: 'padding', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 53
+            }
+          },
+          _react3.default.createElement(
+            _reactNative.Text,
+            { style: [_RetailerStyle2.default.simpletext, { fontFamily: 'raleway-light' }], __source: {
+                fileName: _jsxFileName,
+                lineNumber: 54
+              }
+            },
+            'Register to MATE'
+          ),
+          _react3.default.createElement(_reactNative.TextInput, {
+            placeholder: 'Enter First Name',
+            style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+            multiline: true,
+            maxLength: 20,
+            onChangeText: function onChangeText(firstname) {
+              return _this3.setState({ firstname: firstname });
+            },
+            underlineColorAndroid: this.state.colorReq,
+
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 55
+            }
+          }),
+          _react3.default.createElement(_reactNative.TextInput, {
+            placeholder: 'Enter Last Name',
+            style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+            multiline: true,
+            maxLength: 20,
+            onChangeText: function onChangeText(lastname) {
+              return _this3.setState({ lastname: lastname });
+            },
+            underlineColorAndroid: this.state.colorReq,
+
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 64
+            }
+          }),
+          _react3.default.createElement(_reactNative.TextInput, {
+            placeholder: 'Enter Password',
+            style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+            multiline: true,
+            maxLength: 20,
+            onChangeText: function onChangeText(password) {
+              return _this3.setState({ password: password });
+            },
+            secureTextEntry: true,
+            underlineColorAndroid: this.state.colorReq,
+
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 73
+            }
+          }),
+          _react3.default.createElement(_reactNative.TextInput, {
+            placeholder: 'Confirm Password',
+            style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+            multiline: true,
+            maxLength: 20,
+            secureTextEntry: true,
+            onChangeText: function onChangeText(confirmpassword) {
+              return _this3.setState({ confirmpassword: confirmpassword });
+            },
+            underlineColorAndroid: this.state.colorReq,
+
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 83
+            }
+          }),
+          _react3.default.createElement(_reactNative.TextInput, {
+            placeholder: 'Company Name',
+            style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+            multiline: true,
+            maxLength: 20,
+            onChangeText: function onChangeText(companyname) {
+              return _this3.setState({ companyname: companyname });
+            },
+            underlineColorAndroid: this.state.colorReq,
+
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 93
+            }
+          }),
+          _react3.default.createElement(_reactNative.TextInput, {
+            placeholder: 'Your Position',
+            style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+            multiline: true,
+            maxLength: 20,
+            onChangeText: function onChangeText(position) {
+              return _this3.setState({ position: position });
+            },
+            underlineColorAndroid: this.state.colorReq,
+
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 102
+            }
+          }),
+          _react3.default.createElement(_reactNative.TextInput, {
+            placeholder: 'Company Strength',
+            style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+            onChangeText: function onChangeText(companystrength) {
+              return _this3.setState({ companystrength: companystrength });
+            },
+            keyboardType: 'numeric',
+            underlineColorAndroid: this.state.colorReq,
+
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 111
+            }
+          }),
+          _react3.default.createElement(_reactNative.TextInput, {
+            placeholder: 'Company Domain',
+            style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+            multiline: true,
+            maxLength: 20,
+            onChangeText: function onChangeText(companydomain) {
+              return _this3.setState({ companydomain: companydomain });
+            },
+            underlineColorAndroid: this.state.colorReq,
+
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 119
+            }
+          }),
+          _react3.default.createElement(_reactNative.TextInput, {
+            placeholder: 'Company Registered Address',
+            style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+            multiline: true,
+            maxLength: 20,
+            onChangeText: function onChangeText(companyaddress) {
+              return _this3.setState({ companyaddress: companyaddress });
+            },
+            underlineColorAndroid: this.state.colorReq,
+
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 128
+            }
+          }),
+          _react3.default.createElement(_reactNative.TextInput, {
+            placeholder: 'Phone Number',
+            style: [_RetailerStyle2.default.dlnumber, { fontFamily: 'raleway-light' }],
+            onChangeText: function onChangeText(phonenumber) {
+              return _this3.setState({ phonenumber: phonenumber });
+            },
+            keyboardType: 'phone-pad',
+            underlineColorAndroid: this.state.colorReq,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 137
+            }
+          })
+        )
+      );
+    }
+  }]);
+
+  return Registration;
+}(_react3.default.Component));
+
+exports.default = Registration;

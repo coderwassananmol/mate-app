@@ -1,0 +1,76 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactNative = require('react-native');
+
+var _reactNativeResponsiveDimensions = require('react-native-responsive-dimensions');
+
+var Styles = _reactNative.StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    marginTop: 20
+  },
+  keyContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#4c69a5'
+  },
+  newtomate: {
+    fontSize: (0, _reactNativeResponsiveDimensions.responsiveFontSize)(2.8),
+    textAlign: 'center',
+    padding: 10,
+    color: '#42f459',
+    backgroundColor: '#323533',
+    margin: 10
+  },
+  simpletext: {
+    fontSize: (0, _reactNativeResponsiveDimensions.responsiveFontSize)(3),
+    textAlign: 'center',
+    padding: 5,
+    color: '#000'
+  },
+  dlnumber: {
+    textAlign: 'center',
+    marginHorizontal: 10,
+    marginVertical: 5,
+    color: '#000',
+    fontSize: (0, _reactNativeResponsiveDimensions.responsiveFontSize)(2.8),
+    height: (0, _reactNativeResponsiveDimensions.responsiveHeight)(12),
+    width: (0, _reactNativeResponsiveDimensions.responsiveWidth)(100)
+  },
+  logo: {
+
+    resizeMode: 'contain',
+    marginBottom: 20,
+    padding: 10,
+    marginTop: 20
+  },
+  register: {
+    marginBottom: 20,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 50,
+    backgroundColor: '#ffae'
+  },
+  button: {
+    backgroundColor: '#000',
+    alignItems: 'center',
+    margin: 10,
+    height: (0, _reactNativeResponsiveDimensions.responsiveHeight)(8),
+    width: (0, _reactNativeResponsiveDimensions.responsiveWidth)(40)
+  },
+  buttonText: {
+    margin: 20,
+    textAlign: 'center',
+    color: '#62fce5',
+    fontSize: (0, _reactNativeResponsiveDimensions.responsiveFontSize)(2)
+  }
+});
+
+exports.default = Styles;
