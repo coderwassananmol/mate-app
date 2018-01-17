@@ -16,9 +16,8 @@ import { View,
         Platform,
         ActivityIndicator
       } from 'react-native';
-import logo from '../assets/mate.jpg';
 import { connect } from 'react-redux';
-import {FetchUser} from '../actions/FetchUser';
+import {EmailVerify} from '../actions/EmailVerify';
 import {Actions} from 'react-native-router-flux';
 
 class EmailRegistration extends React.Component {
@@ -53,34 +52,63 @@ class EmailRegistration extends React.Component {
             }
             else {
                 if(!checkmail.test(email)) {
-                    this.setState({emailValid : true, emailValidColor : '#55d841'});
+                    this.setState({emailValid : true, emailValidColor : '#55d841',email : email});
                 }
             }
         }
 
+        onPress() {
+            if(this.state.emailValid && this.state.email != '') {
+                this.props.EmailVerify(this.state.email);
+            }
+        }
+
         render() {
+            const {isFetching,data,hasError,errorMessage} = this.props.user;
+            console.log(errorMessage);
+            console.log(data);
             if(!this.state.fontLoaded) {
                 return <AppLoading />;
             }
             return (
-                <View style={Styles.container}>
-                    <KeyboardAvoidingView behaviour='padding' style={{alignItems:'center'}}>
+            <View style={Styles.container}>
+                <KeyboardAvoidingView behaviour='padding' style={{alignItems:'center'}}>
                     <TextInput
                         placeholder = "Enter E-Mail"
                         style = {[Styles.dlnumber, {fontFamily : 'raleway-light'}]}
                         onChangeText = {(email) => this.checkIfEmail(email)}
                         underlineColorAndroid={this.state.emailValidColor}
                     />
-                    <TouchableHighlight style={Styles.button} onPress={() => console.log(this.state.email)}>
+                    <TouchableHighlight style={Styles.button} onPress={this.onPress.bind(this)}>
                         <Text style={[Styles.buttonText, {fontFamily : 'raleway-medium'}]}>SUBMIT</Text>
                     </TouchableHighlight>
                     {
                         this.state.emailValid ? null : <Text style = {[Styles.simpletext,{fontFamily : 'raleway-light',color: this.state.emailValidColor}]}>Email address is invalid</Text>
                     }
                     </KeyboardAvoidingView>
-                </View>
-            )
+                    {
+                        isFetching == null ? null :
+                          isFetching ?
+                          <View style={Styles.container}>
+                            <ActivityIndicator />
+                          </View> :
+                          !hasError ?
+                          <View style={Styles.container}>
+                            <Text>{data}</Text>
+                          </View> :
+                          <View style={Styles.container}>
+                            <Text>{errorMessage}</Text>
+                          </View>
+                    }
+            </View>
+            );
         }
     }
 
-    export default EmailRegistration;
+    function mapStateToProps(state) {
+        return {
+          user : state.user
+        }
+    }
+      
+export default connect(mapStateToProps,{EmailVerify})(EmailRegistration);

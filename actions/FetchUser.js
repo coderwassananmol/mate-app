@@ -1,10 +1,11 @@
 import client from '../client';
 import { getRetailer } from './graphql/queries';
-import { FETCHING_USER, FETCHING_USER_SUCCESS, FETCHING_USER_FAILURE } from '../utils/ActionTypes'
+import { FETCHING_USER, FETCHING_USER_SUCCESS, FETCHING_USER_FAILURE, FETCHING_EMAIL } from '../utils/ActionTypes'
 
 export function FetchUser(licensenumber) {
 	return dispatch => {
 		dispatch({type: FETCHING_USER})
+		dispatch({type: FETCHING_EMAIL})
 		client.query({
 			query: getRetailer,
 			variables : {
@@ -21,8 +22,4 @@ export function FetchUser(licensenumber) {
 			dispatch({type: FETCHING_USER_FAILURE, payload: null});
 		});
 	}
-}
-
-export function fetchOnClick() {
-	return dispatch(FetchUser());
 }

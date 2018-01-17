@@ -137,7 +137,7 @@ class User extends React.Component {
       const {isFetching,data} = this.props.user;
       if (!this.state.fontLoaded) {
             return <AppLoading />;
-        }
+      }
       return(
         <View style={Styles.container}>
           <Animated.Image source={logo} style={[Styles.logo, { height: this.imageHeight }]} />
