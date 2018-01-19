@@ -1,25 +1,32 @@
 import client from '../client';
 import { getRetailer } from './graphql/queries';
-import { FETCHING_USER, FETCHING_USER_SUCCESS, FETCHING_USER_FAILURE, FETCHING_EMAIL } from '../utils/ActionTypes'
+import { FETCHING_USER, FETCHING_USER_SUCCESS, FETCHING_USER_FAILURE } from '../utils/ActionTypes'
 
-export function FetchUser(licensenumber) {
+export function FetchUser(email,password) {
 	return dispatch => {
-		dispatch({type: FETCHING_USER})
-		dispatch({type: FETCHING_EMAIL})
-		client.query({
-			query: getRetailer,
-			variables : {
-				licensenumber: licensenumber
-			}
+		dispatch({type: FETCHING_USER});
+		fetch('http://192.168.0.16:8000/api/login', {
+		method: 'POST',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			"email" : email,
+			"password" : password
 		})
+		})
+		.then(resp => resp.json())
 		.then((resp) => {
-			if(resp.data) {
-				dispatch({type: FETCHING_USER_SUCCESS, payload: resp.data.Retailer});
+			if(!resp.status) {
+				dispatch({type: FETCHING_USER_FAILURE, payload: resp.error});
+			}
+			else {
+				dispatch({type: FETCHING_USER_SUCCESS, payload: resp.data});
 			}
 		})
 		.catch(err => {
-			console.log(err);
-			dispatch({type: FETCHING_USER_FAILURE, payload: null});
+			dispatch({type: FETCHING_USER_FAILURE, payload: err.error.message});
 		});
 	}
 }

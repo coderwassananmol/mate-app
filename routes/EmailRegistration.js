@@ -59,14 +59,17 @@ class EmailRegistration extends React.Component {
 
         onPress() {
             if(this.state.emailValid && this.state.email != '') {
+                this.setState({emailValid : true, emailValidColor : '#55d841'});
                 this.props.EmailVerify(this.state.email);
+                Actions.EmailTokenVerify();
+            }
+            else {
+                this.setState({emailValid : false, emailValidColor : '#ea3131'});
             }
         }
 
         render() {
             const {isFetching,data,hasError,errorMessage} = this.props.user;
-            console.log(errorMessage);
-            console.log(data);
             if(!this.state.fontLoaded) {
                 return <AppLoading />;
             }
@@ -97,7 +100,7 @@ class EmailRegistration extends React.Component {
                             <Text>{data}</Text>
                           </View> :
                           <View style={Styles.container}>
-                            <Text>{errorMessage}</Text>
+                            <Text>{errorMessage.email}</Text>
                           </View>
                     }
             </View>
@@ -107,7 +110,7 @@ class EmailRegistration extends React.Component {
 
     function mapStateToProps(state) {
         return {
-          user : state.user
+          user : state.EmailVerify
         }
     }
       

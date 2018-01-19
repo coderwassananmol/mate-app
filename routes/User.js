@@ -14,7 +14,8 @@ import { View,
         Keyboard,
         KeyboardAvoidingView,
         Platform,
-        ActivityIndicator
+        ActivityIndicator,
+        AsyncStorage
       } from 'react-native';
 import logo from '../assets/mate.jpg';
 import { connect } from 'react-redux';
@@ -104,7 +105,7 @@ class User extends React.Component {
         }
       }
       else {
-        this.props.FetchUser(this.state.username);
+        this.props.FetchUser(this.state.username,this.state.password);
         this.setState({usernameReq: true});
         this.setState({passwordReq : true});
         this.setState({colorReq : '#55d841'});
@@ -133,8 +134,13 @@ class User extends React.Component {
         }
     }
 
+    login_success(token) {
+      AsyncStorage.setItem('email_token',token);
+      console.log("Logged in!");
+    }
+
     render() {
-      const {isFetching,data} = this.props.user;
+      const {isFetching,data,errorMessage,hasError} = this.props.user;
       if (!this.state.fontLoaded) {
             return <AppLoading />;
       }
@@ -169,9 +175,11 @@ class User extends React.Component {
                   <View style={Styles.container}>
                     <ActivityIndicator />
                   </View> :
+                  !hasError ?
+                  this.login_success(data.token)
+                   :
                   <View style={Styles.container}>
-                    <Text>Licensenumber: {data.licensenumber}</Text>
-                    <Text>User: {data.name}</Text>
+                    <Text>Message: {errorMessage.message}</Text>
                   </View>
               }
             </KeyboardAvoidingView>
