@@ -63,6 +63,46 @@ const Styles = StyleSheet.create({
       textAlign : 'center',
       color : '#62fce5',
       fontSize : responsiveFontSize(2)
+  },
+  clientimage : {
+    width: '100%',
+    opacity: 0.5,
+    height: '100%',
+    justifyContent: 'center',
+    flex: 1
+  },
+  clienttext: {
+    backgroundColor : 'transparent',
+    textAlign: 'center',
+    fontSize: responsiveFontSize(3),
+    color: '#000'
+  },
+  clienttouchable : {
+    flex: 1,
+    width: '100%'
+  },
+  drawer1 : {
+    backgroundColor : '#59aaf8',
+    flex: 1,
+  },
+  drawer1Component : {
+    flex : 1,
+    alignItems : 'center',
+    justifyContent : 'center'
+  },
+  drawer1Text : {
+    textAlign : 'center',
+    color: '#ffffff',
+    fontSize: responsiveFontSize(2)
+  },
+  drawer1Image : {
+    height : responsiveHeight(20),
+    width: responsiveWidth(25),
+  },
+  drawer1Button : {
+    backgroundColor : '#644afe',
+    color: '#fff',
+    width: responsiveWidth(100)
   }
 });
 
