@@ -3,7 +3,7 @@ import { FETCHING_EMAIL, FETCHING_EMAIL_SUCCESS, FETCHING_EMAIL_FAILURE } from '
 export function EmailVerify(email) {
 	return dispatch => {
 		dispatch({type: FETCHING_EMAIL});
-		fetch('http://192.168.0.16:8000/api/emailRegister', {
+		fetch('http://192.168.1.105:8000/api/emailRegister', {
 		method: 'POST',
 		headers: {
 			Accept: 'application/json',

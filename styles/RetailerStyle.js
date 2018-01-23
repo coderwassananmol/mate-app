@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native'
+import {StyleSheet,Platform} from 'react-native'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 const Styles = StyleSheet.create({
   container: {
@@ -103,6 +103,15 @@ const Styles = StyleSheet.create({
     backgroundColor : '#644afe',
     color: '#fff',
     width: responsiveWidth(100)
+  },
+  NavBarContainer: {
+    height: (Platform.OS === 'ios') ? 64 : 54,
+    flexDirection: 'row',
+    paddingTop: 20,
+  },
+  NavBarItem: {
+    flex: 1,
+    justifyContent: 'center'
   }
 });
 

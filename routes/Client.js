@@ -30,7 +30,6 @@ export default class Client extends React.Component {
           super(props);
           this.state = {
               fontLoaded : false,
-              clicked : false
           };
       }
   
@@ -73,7 +72,7 @@ export default class Client extends React.Component {
               var BUSINESS = 'https://theundercoverrecruiter.com/wp-content/uploads/2015/11/team-e1485790781283.jpg';
             return (
             <View style={Styles.container}>
-                <TouchableOpacity style={Styles.clienttouchable}>
+                <TouchableOpacity style={Styles.clienttouchable} onPress={() => Actions.Team()}>
                     <ImageBackground resizeMode='cover' style={Styles.clientimage} source={{uri: TEAM}}>
                         <Text style={[Styles.clienttext,{fontFamily: 'opensans-bold'}]}>TEAM MANAGEMENT</Text>
                     </ImageBackground>

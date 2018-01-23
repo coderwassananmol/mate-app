@@ -3,7 +3,7 @@ import { FETCHING_EMAIL_TOKEN, FETCHING_EMAIL_TOKEN_FAILURE, FETCHING_EMAIL_TOKE
 export function VerifyToken(token) {
 	return dispatch => {
 		dispatch({type: FETCHING_EMAIL_TOKEN});
-		fetch('http://192.168.0.16:8000/api/verifyCompanyEmail?email_token='+token, {
+		fetch('http://192.168.1.105:8000/api/verifyCompanyEmail?email_token='+token, {
 		method: 'GET',
 		headers: {
 			Accept: 'application/json',

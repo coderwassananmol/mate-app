@@ -5,7 +5,7 @@ import { FETCHING_USER, FETCHING_USER_SUCCESS, FETCHING_USER_FAILURE } from '../
 export function FetchUser(email,password) {
 	return dispatch => {
 		dispatch({type: FETCHING_USER});
-		fetch('http://192.168.0.16:8000/api/login', {
+		fetch('http://192.168.1.105:8000/api/login', {
 		method: 'POST',
 		headers: {
 			Accept: 'application/json',
