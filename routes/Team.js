@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Root, ActionSheet , Header, Title, Input, Item, Subtitle , Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { Container, Card, CardItem, Root, ActionSheet , Header, Title, Input, Item, Subtitle , Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import { Font } from 'expo';
 import AppLoading from 'expo/src/launch/AppLoading';
 import Styles from '../styles/RetailerStyle';
 import { Constants } from 'expo';
-import { Alert } from 'react-native';
+import { Alert, View,Keyboard, LayoutAnimation , Animated, TextInput, KeyboardAvoidingView } from 'react-native';
 import {Actions} from 'react-native-router-flux';
-
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 export default class Team extends React.Component {
     constructor(props) {
@@ -14,7 +14,8 @@ export default class Team extends React.Component {
           this.state = {
               fontLoaded : false,
               searchBar : 'none',
-              header : 'flex'
+              header : 'flex',
+              keyboardHeight : 0
           };
       }
   
@@ -31,17 +32,66 @@ export default class Team extends React.Component {
                   fontLoaded  :  true,
               });
           })();
+          this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+          this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
         }
+        
+          componentWillUnmount() {
+            this.keyboardDidShowListener.remove();
+            this.keyboardDidHideListener.remove();
+          }
+        
+          _keyboardDidShow = (e) => {
+            LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+            const {height} = e.endCoordinates;
+            this.setState({keyboardHeight:height});
+          }
+        
+          _keyboardDidHide = () => {
+            LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+            this.setState({keyboardHeight: 0});
+          }
 
         onSearchBarClosePress() {
+            LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
             this.setState({searchBar : 'none',header: 'flex'});
         }
 
         onSearchBarOpenPress() {
+            LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
             this.setState({searchBar : 'flex',header: 'none'});
         }
 
+        displayCard(contact,message) {
+            return (
+                <Card style={{marginLeft: 4,marginTop:5,minWidth: '30%',maxWidth:'50%'}}>
+                    <CardItem>
+                        <Body>
+                            <Text style={{fontSize: 12,color:'#56a2ce',marginBottom:5}}>{contact}</Text>
+                            <Text style={{fontFamily: 'Roboto'}}>{message}</Text>
+                            <Text style={{fontSize: 12,alignSelf: 'flex-end',color:'#56a2ce'}}>{new Date().toLocaleTimeString()}</Text>
+                        </Body>
+                    </CardItem>
+                </Card>
+            );
+        }
+
+        displayOwnMessageCard(message) {
+            return (
+                <Card style={{marginRight: 4,marginTop:5,width:'50%',alignSelf : 'flex-end'}}>
+                    <CardItem>
+                        <Body>
+                            <Text style={{fontSize: 12,color:'#56a2ce',marginBottom:5}}>You</Text>
+                            <Text style={{fontFamily: 'Roboto',alignSelf:'baseline'}}>{message}</Text>
+                            <Text style={{fontSize: 12,alignSelf: 'flex-end',color:'#56a2ce'}}>{new Date().toLocaleTimeString()}</Text>
+                        </Body>
+                    </CardItem>
+                </Card>
+            );
+        }
+
         onRightMenuPress() {
+            this.displayCard("Anmol Wassan","Hello world!");
             var DESTRUCTIVE_INDEX = 5;
             var CANCEL_INDEX = 5;
             var BUTTONS = [
@@ -110,17 +160,15 @@ export default class Team extends React.Component {
                     </Right>
                     </Header>
                     <Content>
-                    <Text>
-                        This is Content Section
-                    </Text>
+                        {this.displayOwnMessageCard("Hello there!")}
+                        {this.displayCard("John Doe","Hey!")}
                     </Content>
-                    <Footer>
-                    <FooterTab>
-                        <Button full>
-                        <Text>Footer</Text>
-                        </Button>
-                    </FooterTab>
-                    </Footer>
+                    <Footer style={{marginBottom: this.state.keyboardHeight}}>
+                        <FooterTab style={{backgroundColor:'#fff'}}>
+                            <Input placeholder="Send message.." multiline placeholderTextColor='#000' style={{fontFamily: 'Roboto',marginLeft:5}}/>
+                            <Icon active name='md-paper-plane' style={{alignSelf:'center',color:'#56a2ce',fontSize:30,marginRight: 20}}/>
+                        </FooterTab>
+                    </Footer>   
                     </Container>
                 </Root>
             );
