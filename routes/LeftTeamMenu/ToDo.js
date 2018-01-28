@@ -7,9 +7,7 @@ import { Constants } from 'expo';
 import { Alert, View, TouchableOpacity, TextInput, TouchableHighlight, AsyncStorage } from 'react-native';
 import Modal from "react-native-modal";
 
-var abc = [];
-
-export default class Team extends React.Component {
+export default class Todo extends React.Component {
     constructor(props) {
           super(props);
           this.state = {
@@ -41,11 +39,6 @@ export default class Team extends React.Component {
 
         _toggleSecondModal = () =>
             this.setState({ isSecondModalVisible: !this.state.isSecondModalVisible });
-
-        onTodoHeaderPress() {
-            this._toggleModal();
-            this._toggleSecondModal();
-        }
 
          renderList() {
             var found = false;
@@ -105,7 +98,7 @@ export default class Team extends React.Component {
                     <Header searchBar rounded backgroundColor='#2c70dd' iosBarStyle='dark-content' androidStatusBarColor='#56a2ce'>
                         <Left>
                             <Button transparent>
-                                <Icon name='ios-arrow-back-outline' style={{color: '#fff',fontSize:30}} onPress={() => this.addListItem.bind(this)}/>
+                                <Icon name='ios-arrow-back-outline' style={{color: '#fff',fontSize:30}}/>
                             </Button>
                         </Left>
                         <Body style={{display: this.state.header}}>
@@ -149,7 +142,7 @@ export default class Team extends React.Component {
                                 onPress={this.onSubmit.bind(this)} 
                                 style={{marginTop: 15,alignSelf:'center'}} 
                                 rounded success>
-                                <Text>Proceed</Text>
+                                <Text>Submit</Text>
                             </Button>
                         </View>
                     </Modal>

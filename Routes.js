@@ -8,7 +8,7 @@ import AllMedia from './routes/LeftTeamMenu/AllMedia';
 import Goal from './routes/LeftTeamMenu/Goal';
 import Notes from './routes/LeftTeamMenu/Notes';
 import TeamReminder from './routes/LeftTeamMenu/TeamReminder';
-import ToDo from './routes/LeftTeamMenu/ToDo';
+import Todo from './routes/LeftTeamMenu/ToDo';
 import Client from './routes/Client';
 import React from 'react';
 import {Text} from 'react-native';
@@ -20,13 +20,13 @@ const Routes = () => (
       <Scene key="EmailRegistration" component={EmailRegistration} hideNavBar />
       <Scene key="UserRegistration" component={Registration} hideNavBar/>
       <Scene key="EmailTokenVerify" component={EmailVerified} type="replace" hideNavBar />
-      <Scene key="Team" component={Team} hideNavBar/>
+      <Scene key="Team" component={Team} hideNavBar initial/>
       <Scene key="Client" component={Client} title="Welcome, user!"/>
       <Scene key="AllMedia" component={AllMedia} hideNavBar/>
       <Scene key="Goal" component={Goal} hideNavBar/>
       <Scene key="Notes" component={Notes} hideNavBar/>
       <Scene key="TeamReminder" component={TeamReminder} hideNavBar/>
-      <Scene key="ToDo" component={ToDo} hideNavBar initial/>
+      <Scene key="ToDo" component={Todo} hideNavBar/>
     </Stack>
   </Router>
 );
