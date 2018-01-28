@@ -39,7 +39,9 @@
     "react-apollo": "^2.0.4",
     "react-native": "0.50.3",
     "react-native-keyboard-aware-scroll-view": "^0.4.3",
+    "react-native-modal": "^5.0.0",
     "react-native-parallax-scroll-view": "^0.20.1",
+    "react-native-prompt": "^1.0.0",
     "react-native-responsive-dimensions": "^1.0.2",
     "react-native-router-flux": "^4.0.0-beta.28",
     "react-native-vector-icons": ">=4.0.0",
@@ -50,6 +52,7 @@
     "redux-logger": "^3.0.6",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
+    "rn-prompt": "^1.0.2",
     "subscriptions-transport-ws": "^0.9.4",
     "tcomb-form-native": "^0.6.11",
     "whatwg-fetch": "^2.0.3"

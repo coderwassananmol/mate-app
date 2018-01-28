@@ -21,12 +21,12 @@ const Routes = () => (
       <Scene key="UserRegistration" component={Registration} hideNavBar/>
       <Scene key="EmailTokenVerify" component={EmailVerified} type="replace" hideNavBar />
       <Scene key="Team" component={Team} hideNavBar/>
-      <Scene key="Client" component={Client} title="Welcome, user!" initial/>
+      <Scene key="Client" component={Client} title="Welcome, user!"/>
       <Scene key="AllMedia" component={AllMedia} hideNavBar/>
       <Scene key="Goal" component={Goal} hideNavBar/>
       <Scene key="Notes" component={Notes} hideNavBar/>
       <Scene key="TeamReminder" component={TeamReminder} hideNavBar/>
-      <Scene key="ToDo" component={ToDo} hideNavBar/>
+      <Scene key="ToDo" component={ToDo} hideNavBar initial/>
     </Stack>
   </Router>
 );
