@@ -40,6 +40,11 @@ export default class Todo extends React.Component {
         _toggleSecondModal = () =>
             this.setState({ isSecondModalVisible: !this.state.isSecondModalVisible });
 
+        onTodoHeaderPress() {
+            this._toggleModal();
+            this._toggleSecondModal();
+        }
+
          renderList() {
             var found = false;
             var todoItemNumber = this.state.todoItemNumber;
