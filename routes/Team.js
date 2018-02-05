@@ -1,9 +1,6 @@
 import React from 'react';
 import { Container, Card, CardItem, Root, ActionSheet , Header, Title, Input, Item, Subtitle , Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
-import { Font } from 'expo';
-import AppLoading from 'expo/src/launch/AppLoading';
 import Styles from '../styles/RetailerStyle';
-import { Constants } from 'expo';
 import { Alert, View,Keyboard, LayoutAnimation , Animated, TextInput, KeyboardAvoidingView } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -20,20 +17,11 @@ export default class Team extends React.Component {
       }
   
       componentWillMount() {
-          (async() => {
-              await Font.loadAsync({
-                  'raleway-light' :  require('../assets/fonts/Raleway-Light.ttf'),
-                  'raleway-medium':  require('../assets/fonts/Raleway-Medium.ttf'),
-                  'opensans-bold' :  require('../assets/fonts/OpenSans-Bold.ttf'),
-                  'Roboto'        :  require('native-base/Fonts/Roboto.ttf'),
-                  'Roboto_medium' :  require('native-base/Fonts/Roboto_medium.ttf'),
-              });
               this.setState({
                   fontLoaded  :  true,
               });
-          })();
-          this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
-          this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+          //this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+          //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
         }
         
           componentWillUnmount() {
@@ -130,12 +118,9 @@ export default class Team extends React.Component {
         }
 
         render() {
-            if(!this.state.fontLoaded) {
-                return <AppLoading />;
-            }
             return (
                 <Root>
-                    <Container style={{marginTop : Constants.statusBarHeight}}>
+                    <Container>
                     <Header searchBar rounded backgroundColor='#2c70dd' iosBarStyle='dark-content' androidStatusBarColor='#56a2ce'>
                     <Item style={{display: this.state.searchBar}}>
                         <Icon name="ios-search" />
@@ -156,7 +141,9 @@ export default class Team extends React.Component {
                     </Body>
                     <Right style={{display: this.state.header}}>
                         <Icon name="ios-search" style={{color: '#fff',fontSize:30,marginRight: 10}} onPress={this.onSearchBarOpenPress.bind(this)}/>
-                        <Icon name="ios-more" style={{color: '#fff',fontSize:30,marginLeft: 10}} onPress={this.onRightMenuPress.bind(this)}/> 
+                        <Item onPress={this.onRightMenuPress.bind(this)}>
+                        <Icon name="ios-more" style={{color: '#fff',fontSize:30,marginLeft: 10}}/> 
+                        </Item>
                     </Right>
                     </Header>
                     <Content>

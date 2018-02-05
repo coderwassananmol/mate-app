@@ -1,6 +1,4 @@
 import React from 'react';
-import { Font } from 'expo';
-import AppLoading from 'expo/src/launch/AppLoading';
 import Styles from '../styles/RetailerStyle';
 import { View,
         TextInput,

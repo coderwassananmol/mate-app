@@ -1,6 +1,4 @@
 import React from 'react';
-import { Font } from 'expo';
-import AppLoading from 'expo/src/launch/AppLoading';
 import Styles from '../styles/RetailerStyle';
 import { View,
         TextInput,
@@ -30,18 +28,12 @@ class EmailRegistration extends React.Component {
       }
   
       componentWillMount() {
-          (async() => {
-              await Font.loadAsync({
-                  'raleway-light' :  require('../assets/fonts/Raleway-Light.ttf'),
-                  'raleway-medium':  require('../assets/fonts/Raleway-Medium.ttf'),
-              });
               this.setState({
                   fontLoaded  :  true,
                   email : '',
                   emailValid : true,
                   emailValidColor : '#55d841'
               });
-          })();
         }
 
         checkIfEmail(email) {
@@ -70,9 +62,6 @@ class EmailRegistration extends React.Component {
 
         render() {
             const {isFetching,data,hasError,errorMessage} = this.props.user;
-            if(!this.state.fontLoaded) {
-                return <AppLoading />;
-            }
             return (
             <View style={Styles.container}>
                 <KeyboardAvoidingView behaviour='padding' style={{alignItems:'center'}}>

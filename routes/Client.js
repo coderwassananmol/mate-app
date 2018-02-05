@@ -1,6 +1,4 @@
 import React from 'react';
-import { Font } from 'expo';
-import AppLoading from 'expo/src/launch/AppLoading';
 import Styles from '../styles/RetailerStyle';
 import { View,
         TextInput,
@@ -34,26 +32,16 @@ export default class Client extends React.Component {
       }
   
       componentWillMount() {
-          (async() => {
-              await Font.loadAsync({
-                  'raleway-light' :  require('../assets/fonts/Raleway-Light.ttf'),
-                  'raleway-medium':  require('../assets/fonts/Raleway-Medium.ttf'),
-                  'opensans-bold' :  require('../assets/fonts/OpenSans-Bold.ttf')
-              });
               this.setState({
                   fontLoaded  :  true,
                   email : '',
                   emailValid : true,
                   emailValidColor : '#55d841'
               });
-          })();
         }
 
         render() {
             const resizeMode = 'center';
-            if(!this.state.fontLoaded) {
-                return <AppLoading />;
-            }
             var navigationView = (
                 <View style={Styles.drawer1}>
                     <View style={Styles.drawer1Component}>

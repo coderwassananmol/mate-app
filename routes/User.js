@@ -1,6 +1,4 @@
 import React from 'react';
-import { Font } from 'expo';
-import AppLoading from 'expo/src/launch/AppLoading';
 import Styles from '../styles/RetailerStyle';
 import { View,
         TextInput,
@@ -37,11 +35,6 @@ class User extends React.Component {
     }
 
     componentWillMount() {
-        (async() => {
-            await Font.loadAsync({
-                'raleway-light' :  require('../assets/fonts/Raleway-Light.ttf'),
-                'raleway-medium':  require('../assets/fonts/Raleway-Medium.ttf'),
-            });
             this.setState({
                 fontLoaded  :  true,
                 username : '',
@@ -49,8 +42,7 @@ class User extends React.Component {
                 usernameReq : true,
                 passwordReq : true,
                 colorReq : '#55d841'
-            });
-        })();
+        });
 
         if(Platform.OS == 'ios') {
           this.keyboardWillShowSub = Keyboard.addListener('keyboardWillShow', this.keyboardWillShow);
@@ -141,9 +133,6 @@ class User extends React.Component {
 
     render() {
       const {isFetching,data,errorMessage,hasError} = this.props.user;
-      if (!this.state.fontLoaded) {
-            return <AppLoading />;
-      }
       return(
         <View style={Styles.container}>
           <Animated.Image source={logo} style={[Styles.logo, { height: this.imageHeight }]} />

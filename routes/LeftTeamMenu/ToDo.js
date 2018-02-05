@@ -1,9 +1,6 @@
 import React from 'react';
 import { Container, Root, ActionSheet , Header, Title, Input, Item, Subtitle , Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
-import { Font } from 'expo';
-import AppLoading from 'expo/src/launch/AppLoading';
 import Styles from '../../styles/RetailerStyle';
-import { Constants } from 'expo';
 import { Alert, View, TouchableOpacity, TextInput, TouchableHighlight, AsyncStorage } from 'react-native';
 import Modal from "react-native-modal";
 
@@ -20,18 +17,9 @@ export default class Todo extends React.Component {
       }
   
       componentWillMount() {
-          (async() => {
-              await Font.loadAsync({
-                  'raleway-light' :  require('../../assets/fonts/Raleway-Light.ttf'),
-                  'raleway-medium':  require('../../assets/fonts/Raleway-Medium.ttf'),
-                  'opensans-bold' :  require('../../assets/fonts/OpenSans-Bold.ttf'),
-                  'Roboto'        :  require('native-base/Fonts/Roboto.ttf'),
-                  'Roboto_medium' :  require('native-base/Fonts/Roboto_medium.ttf'),
-              });
               this.setState({
                   fontLoaded  :  true,
               });
-          })();
         }
 
         _toggleModal = () =>
@@ -95,11 +83,8 @@ export default class Todo extends React.Component {
         }
 
         render() {
-            if(!this.state.fontLoaded) {
-                return <AppLoading />;
-            }
             return (
-                <Container style={{marginTop : Constants.statusBarHeight}}>
+                <Container>
                     <Header searchBar rounded backgroundColor='#2c70dd' iosBarStyle='dark-content' androidStatusBarColor='#56a2ce'>
                         <Left>
                             <Button transparent>

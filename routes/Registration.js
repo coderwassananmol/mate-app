@@ -1,6 +1,4 @@
 import React from 'react';
-import { Font } from 'expo';
-import AppLoading from 'expo/src/launch/AppLoading';
 import Styles from '../styles/RetailerStyle';
 import { View,
         TextInput,
@@ -28,21 +26,12 @@ export default class Registration extends React.Component {
     }
 
     componentWillMount() {
-        (async() => {
-            await Font.loadAsync({
-                'raleway-light' :  require('../assets/fonts/Raleway-Light.ttf'),
-                'raleway-medium':  require('../assets/fonts/Raleway-Medium.ttf'),
-            });
             this.setState({
                 fontLoaded  :  true,
             });
-        })();
       }
 
     render() {
-      if (!this.state.fontLoaded) {
-            return <AppLoading />;
-        }
       return (
           /*  <ScrollView style={{flex: 1}}>
               <Text>REGISTER TO MATE</Text>
