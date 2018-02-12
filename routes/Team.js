@@ -1,27 +1,66 @@
 import React from 'react';
-import { Container, Card, CardItem, Root, ActionSheet , Header, Title, Input, Item, Subtitle , Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { Container, Card, List, ListItem, CardItem, Root, ActionSheet , Header, Title, Input, Item, Subtitle , Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import Styles from '../styles/RetailerStyle';
-import { Alert, View,Keyboard, LayoutAnimation , Animated, TextInput, KeyboardAvoidingView } from 'react-native';
+import { Alert, View,Keyboard, LayoutAnimation , Animated, TextInput, KeyboardAvoidingView, AsyncStorage } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import Pusher from 'pusher-js/react-native'
+import { SEND_MESSAGE, RECEIVE_ALL_MESSAGES, RECEIVE_MESSAGE } from '../utils/ActionTypes'
+import {sendMessage} from '../actions/Chat';
+import { connect } from 'react-redux';
 
-export default class Team extends React.Component {
+class Team extends React.Component {
     constructor(props) {
           super(props);
           this.state = {
               fontLoaded : false,
               searchBar : 'none',
               header : 'flex',
-              keyboardHeight : 0
+              keyboardShow : false,
+              message : null,
+              username : 'Anmol',
+              chats : [],
+              count : -2
           };
+          this.socket = null;
+          this.channel = null;
       }
   
       componentWillMount() {
               this.setState({
                   fontLoaded  :  true,
+                  message : null
               });
-          //this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
-          //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+          this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+          this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+          this.socket = new Pusher('c8aa2bd0e73e7df4c612', {
+            cluster: 'ap2',
+            activityTimeout : 15000
+          });
+          this.channel = this.socket.subscribe('chat-room');
+        }
+
+        /*
+        * Important: The function will get called when the user sends the message. 
+        * Props: type, message
+        * type: SEND_MESSAGE or RECEIVE_MESSAGE
+        * message : The message sent and received
+        * The `chats` array is updated each time when the message is sent or received.
+        */
+        componentWillReceiveProps(nextProps) {
+            const {type,message} = nextProps.user;
+            if(type === SEND_MESSAGE) {
+                this.state.chats.push({
+                    sender : "Anmol",
+                    message : message
+                });
+            }
+        }
+
+       shouldComponentUpdate(nextProps,nextState) {
+           console.log("Next State: " + nextState.chats.length);
+           console.log("Previous State: " + this.state.chats.length);
+           return true;
         }
         
           componentWillUnmount() {
@@ -29,15 +68,12 @@ export default class Team extends React.Component {
             this.keyboardDidHideListener.remove();
           }
         
-          _keyboardDidShow = (e) => {
-            LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
-            const {height} = e.endCoordinates;
-            this.setState({keyboardHeight:height});
+          _keyboardDidShow = () => {
+            this.setState({keyboardShow : true});
           }
         
           _keyboardDidHide = () => {
-            LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
-            this.setState({keyboardHeight: 0});
+            this.setState({keyboardShow : false});
           }
 
         onSearchBarClosePress() {
@@ -62,6 +98,14 @@ export default class Team extends React.Component {
                     </CardItem>
                 </Card>
             );
+        }
+
+        sendMessageAction() {
+            const count = this.state.count;
+            this.props.sendMessage(this.state.message,"Anmol");
+            this.setState({
+                count : count+1
+            });
         }
 
         displayOwnMessageCard(message) {
@@ -118,6 +162,9 @@ export default class Team extends React.Component {
         }
 
         render() {
+            console.log(this.state.chats);
+            const {type,message} = this.props.user;
+            
             return (
                 <Root>
                     <Container>
@@ -147,13 +194,40 @@ export default class Team extends React.Component {
                     </Right>
                     </Header>
                     <Content>
-                        {this.displayOwnMessageCard("Hello there!")}
-                        {this.displayCard("John Doe","Hey!")}
+                        {
+                            <List dataArray={this.state.chats}
+                                renderRow={(item) =>
+                                    <Card style={{marginRight: 4,marginTop:5,width:'50%',alignSelf : 'flex-end'}}>
+                                    <CardItem>
+                                        <Body>
+                                            <Text style={{fontSize: 12,color:'#56a2ce',marginBottom:5}}>You</Text>
+                                            <Text style={{fontFamily: 'Roboto',alignSelf:'baseline'}}>{item.message}</Text>
+                                            <Text style={{fontSize: 12,alignSelf: 'flex-end',color:'#56a2ce'}}>{new Date().toLocaleTimeString()}</Text>
+                                        </Body>
+                                    </CardItem>
+                                </Card>
+                                }
+                                >
+                                </List>
+                        }
                     </Content>
                     <Footer style={{marginBottom: this.state.keyboardHeight}}>
                         <FooterTab style={{backgroundColor:'#fff'}}>
-                            <Input placeholder="Send message.." multiline placeholderTextColor='#000' style={{fontFamily: 'Roboto',marginLeft:5}}/>
-                            <Icon active name='md-paper-plane' style={{alignSelf:'center',color:'#56a2ce',fontSize:30,marginRight: 20}}/>
+                            <Input 
+                                placeholder="Start typing.." 
+                                multiline 
+                                autoGrow
+                                placeholderTextColor='#000' 
+                                onChangeText = {(message) => this.setState({message : message})}
+                                value = {this.state.message}
+                                style={{fontFamily: 'Roboto',marginLeft:5}}/>
+                            <Item onPress={this.sendMessageAction.bind(this)}>
+                                <Icon active name='md-paper-plane' style={{alignSelf:'center',color:'#56a2ce',fontSize:30,marginRight: 20}}/>
+                            </Item>
+                            {
+                                !this.state.keyboardShow ? 
+                                <Icon active name='ios-attach' style={{alignSelf:'center',color:'#56a2ce',fontSize:30,marginRight: 20}}/> : null
+                            }
                         </FooterTab>
                     </Footer>   
                     </Container>
@@ -161,3 +235,11 @@ export default class Team extends React.Component {
             );
         }
     }
+
+    function mapStateToProps(state) {
+        return {
+          user : state.ChatReducer
+        }
+    }
+
+    export default connect(mapStateToProps,{sendMessage})(Team);

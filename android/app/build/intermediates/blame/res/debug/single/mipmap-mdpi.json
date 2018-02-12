@@ -2,5 +2,9 @@
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
         "source": "/home/wassan/Downloads/mate-app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/home/wassan/mate-app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     }
 ]
