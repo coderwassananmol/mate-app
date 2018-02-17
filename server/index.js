@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const pusher = require('pusher');
+const mysql = require('mysql');
 
 var pusherClient = new pusher({
     appId: '472232',
@@ -10,22 +11,45 @@ var pusherClient = new pusher({
     encrypted: true
   });
 
-  var channel = 'private-chat-channel';
+
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "jan261998",
+    database: "mate"
+  });
+
+  con.connect(function(err) {
+    if (err) throw err;
+  });
+
+  function insertDB(message,user_id) {
+    console.log("Connected!");
+    var sql = "INSERT INTO messages (message, user_id, flag, is_media) VALUES ('"+message+"', '"+user_id+"', 0, 0)";
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log("1 record inserted");
+    });
+}
+
+  var channel = 'chat-channel';
 
   const app = express();
   app.use(bodyParser.json());
 
-  app.post('/send',function(req,res) {
+  app.post('/send/:sender',function(req,res) {
       console.log(req.body);
       var data = {
           message : req.body.message,
-          sender : req.body.sender
+          type : req.body.type,
+          sender : req.params.sender
       }
-      console.log("Sending message : " + data.message + " from " + data.sender);
+      console.log("Sending message : " + data.message + " from " + data.sender + " of type " + data.type);
       pusherClient.trigger(channel,'send',data,req.body.socketid);
+      insertDB(data.message,15315)
       res.sendStatus(204);
   });
 
-  app.listen(4000,'192.168.42.141',function() {
+  app.listen(4000,'192.168.42.96',function() {
       console.log("Listening on port 4000");
   });

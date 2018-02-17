@@ -1,21 +1,22 @@
-import { SEND_MESSAGE, RECEIVE_ALL_MESSAGES, RECEIVE_MESSAGE } from '../utils/ActionTypes'
+import { MESSAGE, CODE, POLL, GRAPH } from '../utils/ActionTypes'
 
-export function sendMessage(message,sender) {
+export function sendMessage(message,type,sender) {
 	return dispatch => {
-		fetch("http://192.168.42.141:4000/send", {
+		fetch("http://192.168.42.96:4000/send/"+sender, {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     "message" : message,
-                    "sender" : sender
+                    "type" : type
                 })
             })
 		    .then(resp => {
                 dispatch({
-                    type : SEND_MESSAGE,
-                    message : message
+                    message : message,
+                    type : type,
+                    sender : sender
                 })
             })
 		.catch(err => {

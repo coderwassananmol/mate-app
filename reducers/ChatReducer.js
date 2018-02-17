@@ -1,28 +1,42 @@
-import { SEND_MESSAGE, RECEIVE_ALL_MESSAGES, RECEIVE_MESSAGE } from '../utils/ActionTypes'
+import { MESSAGE, CODE, POLL, GRAPH } from '../utils/ActionTypes'
 
 const initialState = {
+  message : null,
   type : null,
-  message : null
+  sender : null
 }
 
 export default function(state = initialState, action) {
   switch(action.type) {
-    case SEND_MESSAGE:
+    case MESSAGE:
       return Object.assign({},state, {
-        type : SEND_MESSAGE,
-        message : action.message
+        message : action.message,
+        type : action.type,
+        sender : action.sender
       });
       break;
 
-    case RECEIVE_ALL_MESSAGES:
+    case POLL:
       return Object.assign({},state, {
-        type : RECEIVE_ALL_MESSAGES
+        message : action.message,
+        type : action.type,
+        sender : action.sender
       });
       break;
 
-    case RECEIVE_MESSAGE:
+    case GRAPH:
       return Object.assign({},state, {
-        type : RECEIVE_MESSAGE
+        message : action.message,
+        type : action.type,
+        sender : action.sender
+      });
+      break;
+
+    case CODE:
+      return Object.assign({},state, {
+        message : action.message,
+        type : action.type,
+        sender : action.sender
       });
       break;
 

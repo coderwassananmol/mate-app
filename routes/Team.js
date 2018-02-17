@@ -1,13 +1,14 @@
 import React from 'react';
-import { Container, Card, List, ListItem, CardItem, Root, ActionSheet , Header, Title, Input, Item, Subtitle , Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { Container, Row ,Badge ,Card, Grid, Col, List, ListItem, CardItem, Root, ActionSheet , Header, Title, Input, Item, Subtitle , Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import Styles from '../styles/RetailerStyle';
-import { Alert, View,Keyboard, LayoutAnimation , Animated, TextInput, KeyboardAvoidingView, AsyncStorage } from 'react-native';
+import { Alert, View,Keyboard, LayoutAnimation , Animated, TextInput, KeyboardAvoidingView, AsyncStorage, ScrollView, Switch } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Pusher from 'pusher-js/react-native'
-import { SEND_MESSAGE, RECEIVE_ALL_MESSAGES, RECEIVE_MESSAGE } from '../utils/ActionTypes'
+import { MESSAGE, CODE, GRAPH, POLL } from '../utils/ActionTypes'
 import {sendMessage} from '../actions/Chat';
 import { connect } from 'react-redux';
+import Modal from 'react-native-modal'
 
 class Team extends React.Component {
     constructor(props) {
@@ -20,10 +21,26 @@ class Team extends React.Component {
               message : null,
               username : 'Anmol',
               chats : [],
-              count : -2
+              displayFooter : 'flex',
+              pollitemnumber: 2,
+              pollitem : [],
+              PollModal : false,
+              GraphModal : false,
+              CodeModal : false,
+              showDisabledButton : true,
+              PollItemText : []
           };
-          this.socket = null;
-          this.channel = null;
+          this.socket = new Pusher('c8aa2bd0e73e7df4c612', {
+            appId: '472232',
+            secret: '733050c3d6108065c34b',
+            cluster: 'ap2',
+            encrypted: true,
+            restServer: 'http://192.168.42.96:4000/send/anmolwassan',
+            activityTimeout: 15000
+          });
+          this.channel = this.socket.subscribe('chat-channel');
+          this.channel.bind('send',(data) => {
+          });
       }
   
       componentWillMount() {
@@ -33,34 +50,26 @@ class Team extends React.Component {
               });
           this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
           this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
-          this.socket = new Pusher('c8aa2bd0e73e7df4c612', {
-            cluster: 'ap2',
-            activityTimeout : 15000
-          });
-          this.channel = this.socket.subscribe('chat-room');
         }
 
         /*
         * Important: The function will get called when the user sends the message. 
-        * Props: type, message
-        * type: SEND_MESSAGE or RECEIVE_MESSAGE
+        * Props: message, type, sender
+        * type: MESSAGE, CODE, POLL, GRAPH
         * message : The message sent and received
         * The `chats` array is updated each time when the message is sent or received.
         */
-        componentWillReceiveProps(nextProps) {
+        async componentWillReceiveProps(nextProps) {
             const {type,message} = nextProps.user;
-            if(type === SEND_MESSAGE) {
-                this.state.chats.push({
+            if(type === MESSAGE) {
+                await this.state.chats.push({
                     sender : "Anmol",
                     message : message
                 });
             }
-        }
-
-       shouldComponentUpdate(nextProps,nextState) {
-           console.log("Next State: " + nextState.chats.length);
-           console.log("Previous State: " + this.state.chats.length);
-           return true;
+            if(type === POLL) {
+                Alert.alert('New Poll Received');
+            }
         }
         
           componentWillUnmount() {
@@ -69,11 +78,42 @@ class Team extends React.Component {
           }
         
           _keyboardDidShow = () => {
-            this.setState({keyboardShow : true});
+            this.setState({
+                keyboardShow : true,
+                displayFooter : 'none'
+            });
           }
         
           _keyboardDidHide = () => {
-            this.setState({keyboardShow : false});
+            this.setState({
+                keyboardShow : false,
+                displayFooter : 'flex'
+            });
+          }
+
+          _toggleModal(type) {
+              switch(type) {
+                case 'poll':
+                    this.setState({
+                        GraphModal : false,
+                        PollModal : true
+                    });
+                    break;
+                case 'code':
+                    this.setState({
+                        GraphModal : false,
+                        PollModal : false
+                    });
+                    Actions.Code();
+                    break;
+                case 'graph':
+                    this.setState({
+                        CodeModal : false,
+                        GraphModal : true,
+                        PollModal : false
+                    });
+                    break;
+              }
           }
 
         onSearchBarClosePress() {
@@ -84,6 +124,29 @@ class Team extends React.Component {
         onSearchBarOpenPress() {
             LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
             this.setState({searchBar : 'flex',header: 'none'});
+        }
+
+        renderPollItem() {
+            this.state.pollitem.push(
+                <Item key={this.state.pollitemnumber} regular style={{marginBottom:10,borderColor:'#000',width:'80%',alignItems:'center',justifyContent:'center'}}>
+                    <Input 
+                        placeholderTextColor='#000' 
+                        style={{fontSize:17,color: '#000'}}
+                        onChangeText = {(text) => this.setState({[`pollitemnumber${this.state.pollitemnumber}`] : text})}
+                        placeholder={'Option ' + this.state.pollitemnumber}
+                    />
+                </Item>
+            );
+        }
+
+        async addNewPollItem() {
+            var pollno = this.state.pollitemnumber;
+            pollno+=1;
+            await this.setState({
+                pollitemnumber : pollno,
+            });
+            this.renderPollItem();
+            this.setState({showDisabledButton: false});
         }
 
         displayCard(contact,message) {
@@ -100,12 +163,18 @@ class Team extends React.Component {
             );
         }
 
-        sendMessageAction() {
-            const count = this.state.count;
-            this.props.sendMessage(this.state.message,"Anmol");
+        sendMessageAction(message,type,sender) {
+            this.props.sendMessage(message,type,sender);
             this.setState({
-                count : count+1
+                message : ''
             });
+        }
+
+        createPoll() {
+            for(var i=1; i<=this.state.pollitemnumber; i++) {
+                this.state.PollItemText.push(this.state['pollitemnumber'+i]);
+            }
+            this.props.sendMessage(this.state.PollItemText,POLL,'ANMOL');
         }
 
         displayOwnMessageCard(message) {
@@ -142,7 +211,7 @@ class Team extends React.Component {
             },buttonIndex => {
                 switch(buttonIndex) {
                     case 0:
-                        Actions.AllMedia();
+                        Actions.Hotel();
                         break;
                     case 1:
                         Actions.Notes();
@@ -161,10 +230,33 @@ class Team extends React.Component {
             });
         }
 
-        render() {
-            console.log(this.state.chats);
-            const {type,message} = this.props.user;
-            
+        closeModal() {
+            this.setState({
+                PollModal: false,
+                CodeModal : false,
+                GraphModal: false
+            })
+        }
+
+        removeOption() {
+            var pollno = this.state.pollitemnumber;
+            pollno -= 1;
+            if(pollno > 2) {
+                this.setState({
+                    pollitemnumber : pollno
+                });
+                this.state.pollitem.pop();
+            }
+            else if(pollno == 2) {
+                this.setState({
+                    pollitemnumber : pollno,
+                    showDisabledButton : true
+                });
+                this.state.pollitem.pop();
+            }
+        }
+
+        render() {            
             return (
                 <Root>
                     <Container>
@@ -179,7 +271,7 @@ class Team extends React.Component {
                     </Button>
                     <Left style={{display: this.state.header}}>
                         <Button transparent>
-                            <Icon name='ios-menu' style={{color: '#fff',fontSize:30}}/>
+                            <Icon name='ios-menu-outline' style={{color: '#fff',fontSize:30}}/>
                         </Button>
                     </Left>
                     <Body style={{display: this.state.header}}>
@@ -194,34 +286,101 @@ class Team extends React.Component {
                     </Right>
                     </Header>
                     <Content>
-                        {
-                            <List dataArray={this.state.chats}
-                                renderRow={(item) =>
-                                    <Card style={{marginRight: 4,marginTop:5,width:'50%',alignSelf : 'flex-end'}}>
-                                    <CardItem>
-                                        <Body>
-                                            <Text style={{fontSize: 12,color:'#56a2ce',marginBottom:5}}>You</Text>
-                                            <Text style={{fontFamily: 'Roboto',alignSelf:'baseline'}}>{item.message}</Text>
-                                            <Text style={{fontSize: 12,alignSelf: 'flex-end',color:'#56a2ce'}}>{new Date().toLocaleTimeString()}</Text>
-                                        </Body>
-                                    </CardItem>
-                                </Card>
-                                }
-                                >
-                                </List>
-                        }
+                            <List 
+                                dataArray={this.state.chats}
+                                renderRow={
+                                    (row) =>
+                                        this.displayOwnMessageCard(row.message)
+                                }>
+                            </List>
+                        <Modal 
+                            style={{backgroundColor:'#d3e4ff'}} 
+                            isVisible={this.state.PollModal} 
+                            >
+                            <Icon active 
+                                name='ios-close-outline' 
+                                alignItems='flex-end' 
+                                style={{fontSize:50,marginLeft:15,marginTop:15}}/>
+                            <ScrollView keyboardShouldPersistTaps='always' style={{flex: 1,paddingTop:30}}>
+                                <View style={{alignItems: 'center',justifyContent:'center',flex: 1}}>
+                                <Item style={{borderBottomColor:'#000',marginTop:15,width:'80%',alignItems:'center',alignSelf:'center'}}>
+                                    <Icon active name='md-create' />
+                                        <Input 
+                                            placeholderTextColor='#000' 
+                                            style={{fontSize:20,color: '#000'}}
+                                            multiline 
+                                            textAlign='center'
+                                            placeholder='Poll Title'/> 
+                                </Item>
+                                <Item style={{borderBottomColor:'#000',marginTop:15,width:'80%',alignItems:'center',alignSelf:'center'}}>
+                                    <Icon active name='md-create' />
+                                        <Input 
+                                            placeholderTextColor='#000' 
+                                            style={{fontSize:20,color: '#000'}}
+                                            multiline 
+                                            textAlign='center'
+                                            placeholder='Additional Info'/> 
+                                </Item>
+                                <Text>Vote more than once?</Text>
+                                <Switch onTintColor='#34e33a'/>
+                                <Item regular style={{marginBottom:10,marginTop:15,borderColor:'#000',width:'80%',alignItems:'center',justifyContent:'center'}}>
+                                    <Input 
+                                    placeholderTextColor='#000' 
+                                    style={{fontSize:17,color: '#000'}}
+                                    onChangeText = {(text) => this.setState({pollitemnumber1 : text})}
+                                    placeholder='Option 1' />
+                                </Item>
+                                <Item regular style={{marginBottom:10,borderColor:'#000',width:'80%',alignItems:'center',justifyContent:'center'}}>
+                                    <Input 
+                                    placeholderTextColor='#000' 
+                                    style={{fontSize:17,color: '#000'}}
+                                    onChangeText = {(text) => this.setState({pollitemnumber2 : text})}
+                                    placeholder='Option 2' />
+                                </Item>
+                                {this.state.pollitem}
+                                <Grid>
+                                    <Col>
+                                        <Button 
+                                            style={{height: 40, width:150,alignSelf:'center',marginBottom:20}}
+                                            onPress={this.addNewPollItem.bind(this)}
+                                            rounded dark>
+                                            <Icon name='ios-add-outline' />
+                                            <Text style={{textAlign:'center',marginRight:30}}>Add new</Text>
+                                        </Button>
+                                    </Col>
+                                    
+                                    <Col>
+                                        <Button
+                                            disabled={this.state.showDisabledButton}
+                                            style={{height: 40, width:150,alignSelf:'center',marginBottom:20}}
+                                            rounded danger={!this.state.showDisabledButton}
+                                            onPress={this.removeOption.bind(this)}>
+                                            <Icon name='ios-close-outline' />
+                                            <Text style={{textAlign:'center',marginRight:30}}>Remove</Text>
+                                        </Button>
+                                    </Col>
+                                </Grid>
+                                </View>
+                            </ScrollView>
+                            <Button 
+                                success
+                                onPress={this.createPoll.bind(this)} 
+                                style={{alignSelf: 'center',width:'100%',alignItems:'center',justifyContent:'center'}}>
+                                <Text style={{textAlign:'center'}}>CREATE POLL</Text>
+                            </Button>
+                        </Modal>
                     </Content>
                     <Footer style={{marginBottom: this.state.keyboardHeight}}>
                         <FooterTab style={{backgroundColor:'#fff'}}>
                             <Input 
                                 placeholder="Start typing.." 
                                 multiline 
-                                autoGrow
+                                autoGCol
                                 placeholderTextColor='#000' 
                                 onChangeText = {(message) => this.setState({message : message})}
                                 value = {this.state.message}
                                 style={{fontFamily: 'Roboto',marginLeft:5}}/>
-                            <Item onPress={this.sendMessageAction.bind(this)}>
+                            <Item onPress={this.sendMessageAction.bind(this,this.state.message,MESSAGE,'ANMOL')}>
                                 <Icon active name='md-paper-plane' style={{alignSelf:'center',color:'#56a2ce',fontSize:30,marginRight: 20}}/>
                             </Item>
                             {
@@ -229,9 +388,25 @@ class Team extends React.Component {
                                 <Icon active name='ios-attach' style={{alignSelf:'center',color:'#56a2ce',fontSize:30,marginRight: 20}}/> : null
                             }
                         </FooterTab>
+                    </Footer>
+                    <Footer style={{display: this.state.displayFooter}}>
+                        <FooterTab>
+                            <Button vertical onPress={this._toggleModal.bind(this,'poll')}>
+                            <Icon name="ios-list-box-outline" />
+                                <Text>Create poll</Text>
+                            </Button>
+                            <Button vertical onPress={this._toggleModal.bind(this,'code')}>
+                                <Icon name="ios-code-outline" />
+                                <Text>Create code</Text>
+                            </Button>
+                            <Button vertical onPress={this._toggleModal.bind(this,'graph')}>
+                                <Icon name="ios-stats-outline" />
+                                <Text>Create graph</Text>
+                            </Button>
+                        </FooterTab>
                     </Footer>   
                     </Container>
-                </Root>
+                    </Root>
             );
         }
     }
