@@ -17,11 +17,11 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_normal.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_text_light_normal.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_text_light_normal.xml"
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_focused.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_text_dark_focused.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_text_dark_focused.xml"
     },
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_focused.xml",
@@ -29,7 +29,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_disabled.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_icon_disabled.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_icon_disabled.xml"
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
@@ -77,7 +77,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_icon_light.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_icon_light.xml"
     },
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
@@ -85,11 +85,11 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_icon_light_normal.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_icon_light_normal.xml"
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_focused.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
@@ -105,7 +105,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_text_dark.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
@@ -133,7 +133,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_focused.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_text_light_focused.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_text_light_focused.xml"
     },
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
@@ -165,7 +165,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_text_light.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_text_light.xml"
     },
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
@@ -213,7 +213,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_focused.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_icon_light_focused.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_icon_light_focused.xml"
     },
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
@@ -233,7 +233,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_disabled.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_text_disabled.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_text_disabled.xml"
     },
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
@@ -241,11 +241,11 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_icon_dark.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_icon_dark.xml"
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_normal.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
     },
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
@@ -293,7 +293,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_normal.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/res/drawable/common_google_signin_btn_text_dark_normal.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/res/drawable/common_google_signin_btn_text_dark_normal.xml"
     },
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_normal.xml",

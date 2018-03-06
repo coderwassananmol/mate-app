@@ -94,13 +94,12 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
-
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.mate"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         ndk {
@@ -137,7 +136,6 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-fbsdk')
     compile project(':react-native-realtime-pusher')
     compile project(':react-native-push-notification')
     compile project(':react-native-vector-icons')

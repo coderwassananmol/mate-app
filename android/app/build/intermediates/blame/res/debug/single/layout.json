@@ -9,7 +9,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout/redbox_item_title.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.50.3/res/layout/redbox_item_title.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/res/layout/redbox_item_title.xml"
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
@@ -17,7 +17,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout/redbox_item_frame.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.50.3/res/layout/redbox_item_frame.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/res/layout/redbox_item_frame.xml"
     },
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
@@ -153,7 +153,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout/fps_view.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.50.3/res/layout/fps_view.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/res/layout/fps_view.xml"
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
@@ -169,7 +169,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout/dev_loading_view.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.50.3/res/layout/dev_loading_view.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/res/layout/dev_loading_view.xml"
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
@@ -217,7 +217,7 @@
     },
     {
         "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout/redbox_view.xml",
-        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.50.3/res/layout/redbox_view.xml"
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/res/layout/redbox_view.xml"
     },
     {
         "merged": "/home/wassan/Downloads/mate-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",

@@ -17,13 +17,13 @@ ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:1:1-64
 		ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
 ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:6:5-67
-MERGED from [com.google.android.gms:play-services-gcm:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.0.4/AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/11.0.4/AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-gcm:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.8.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-iid:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/11.8.0/AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:7:5-77
-MERGED from [com.facebook.react:react-native:0.50.3] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.50.3/AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.51.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/AndroidManifest.xml:11:5-78
 	android:name
 		ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:7:22-75
 uses-permission#android.permission.WAKE_LOCK
@@ -58,14 +58,19 @@ uses-sdk
 ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:17:5-19:41
 MERGED from [MATE:react-native-realtime-pusher:unspecified] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/MATE/react-native-realtime-pusher/unspecified/AndroidManifest.xml:8:5-10:41
 MERGED from [MATE:react-native-push-notification:unspecified] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/MATE/react-native-push-notification/unspecified/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services-gcm:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.0.4/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/11.0.4/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-base:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/11.0.4/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.0.4/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-gcm:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.8.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-iid:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/11.8.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/11.8.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks-license/11.8.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base-license/11.8.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.8.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement-license/11.8.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-iid-license:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid-license/11.8.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-gcm-license:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm-license/11.8.0/AndroidManifest.xml:4:5-43
 MERGED from [me.leolin:ShortcutBadger:1.1.8] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/me.leolin/ShortcutBadger/1.1.8/AndroidManifest.xml:7:5-9:41
 MERGED from [MATE:react-native-vector-icons:unspecified] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/MATE/react-native-vector-icons/unspecified/AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.50.3] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.50.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.51.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:23.1.1] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:25.2.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.2.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/AndroidManifest.xml:21:5-23:60
@@ -93,12 +98,17 @@ MERGED from [com.facebook.soloader:soloader:0.1.0] /home/wassan/mate-app/android
 		INJECTED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml
 application
 ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:21:5-62:19
-MERGED from [com.google.android.gms:play-services-gcm:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.0.4/AndroidManifest.xml:23:5-19
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/11.0.4/AndroidManifest.xml:23:5-19
-MERGED from [com.google.android.gms:play-services-base:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/11.0.4/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.0.4/AndroidManifest.xml:19:5-21:19
-MERGED from [com.facebook.react:react-native:0.50.3] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.50.3/AndroidManifest.xml:13:5-20
+MERGED from [com.google.android.gms:play-services-gcm:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.8.0/AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-iid:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/11.8.0/AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/11.8.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks-license/11.8.0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base-license/11.8.0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.8.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement-license/11.8.0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-iid-license:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid-license/11.8.0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-gcm-license:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm-license/11.8.0/AndroidManifest.xml:5:5-20
+MERGED from [com.facebook.react:react-native:0.51.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/AndroidManifest.xml:13:5-20
 MERGED from [com.android.support:appcompat-v7:23.1.1] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:25.2.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.2.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/AndroidManifest.xml:25:5-20
@@ -188,24 +198,24 @@ ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:61:7-8
 	android:name
 		ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:61:17-81
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.android.gms:play-services-gcm:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.0.4/AndroidManifest.xml:20:5-81
-MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/11.0.4/AndroidManifest.xml:20:5-81
+ADDED from [com.google.android.gms:play-services-gcm:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.8.0/AndroidManifest.xml:23:5-82
+MERGED from [com.google.android.gms:play-services-iid:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/11.8.0/AndroidManifest.xml:23:5-82
 	android:name
-		ADDED from [com.google.android.gms:play-services-gcm:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.0.4/AndroidManifest.xml:20:22-79
+		ADDED from [com.google.android.gms:play-services-gcm:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.8.0/AndroidManifest.xml:23:22-79
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.8.0/AndroidManifest.xml:24:13-79
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.0.4/AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.8.0/AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.0.4/AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.8.0/AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.0.4/AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:11.8.0] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.8.0/AndroidManifest.xml:24:13-58
 uses-permission#com.sec.android.provider.badge.permission.READ
 ADDED from [me.leolin:ShortcutBadger:1.1.8] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/me.leolin/ShortcutBadger/1.1.8/AndroidManifest.xml:19:5-86
 	android:name
