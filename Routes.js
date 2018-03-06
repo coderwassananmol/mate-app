@@ -4,19 +4,20 @@
 */
 
 /* Do not remove the below line. */
-import {Router,Stack,Scene} from 'react-native-router-flux';
-
+import {Router,Stack,Scene,Lightbox} from 'react-native-router-flux';
+import React from 'react';
 /* 
   User Registration and Login
-    * User 
+    * Login 
     * Registration
-    * E-Mail
-    * E-Mail Verified
+    * E-Mail Registration
+    * E-Mail Token Verification
+    * Company Registration
 */
-import User from './routes/User';
+import Login from './routes/Login';
 import Registration from './routes/Registration';
 import EmailRegistration from './routes/EmailRegistration';
-import EmailVerified from './routes/EmailVerified';
+import EmailToken from './routes/EmailToken';
 
 /* 
     Team Management Dashboard 
@@ -42,6 +43,7 @@ import Todo from './routes/LeftTeamMenu/ToDo';
 /*
     Client Screen
 */
+import { Root } from 'native-base';
 import Client from './routes/Client';
 import Hotel from './routes/Hotel';
 
@@ -51,22 +53,22 @@ import Hotel from './routes/Hotel';
 */
 import Code from './routes/BottomTeamMenu/Code'
 const Routes = () => (
-  <Router navigationBarStyle={{ backgroundColor: '#81b71a' }}>
-    <Stack key="root">
-      <Scene key="User" component={User} hideNavBar/>
+  <Router>
+    <Scene key="root">
+      <Scene key="Login" component={Login} hideNavBar />
       <Scene key="EmailRegistration" component={EmailRegistration} hideNavBar />
-      <Scene key="UserRegistration" component={Registration} hideNavBar/>
-      <Scene key="EmailTokenVerify" component={EmailVerified} type="replace" hideNavBar />
-      <Scene key="Team" component={Team} hideNavBar initial/>
+      <Scene key="Registration" component={Registration} hideNavBar type="reset" initial/>
+      <Scene key="EmailToken" component={EmailToken} hideNavBar />
+      <Scene key="Team" component={Team} hideNavBar/>
       <Scene key="Client" component={Client} title="Welcome, user!"/>
       <Scene key="AllMedia" component={AllMedia} hideNavBar/>
       <Scene key="Goal" component={Goal} hideNavBar/>
       <Scene key="Notes" component={Notes} hideNavBar/>
-      <Scene key="Hotel" component={Hotel} hideNavBar/>
+      <Scene key="Hotel" component={Hotel} hideNavBar />
       <Scene key="TeamReminder" component={TeamReminder} hideNavBar/>
       <Scene key="ToDo" component={Todo} hideNavBar/>
       <Scene key="Code" component={Code} hideNavBar/>
-    </Stack>
+    </Scene>
   </Router>
 );
 

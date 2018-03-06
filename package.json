@@ -1,5 +1,5 @@
 {
-  "name": "TheMedicine",
+  "name": "mate",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -20,6 +20,11 @@
   "jest": {
     "preset": "jest-expo"
   },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
+  },
   "dependencies": {
     "@expo/vector-icons": "^6.2.2",
     "apollo-cache-inmemory": "^1.1.5",
@@ -29,6 +34,7 @@
     "babel-core": "^6.0.0",
     "babel-preset-expo": "^4.0.0",
     "babel-preset-react-native": "2.1.0",
+    "base-64": "^0.1.0",
     "es6-promise": "^4.2.2",
     "fetchival": "^0.3.3",
     "graphql": "^0.11.7",
@@ -40,8 +46,10 @@
     "react": "16.0.0",
     "react-apollo": "^2.0.4",
     "react-native": "0.50.3",
+    "react-native-fbsdk": "^0.7.0",
     "react-native-keyboard-aware-scroll-view": "^0.4.3",
     "react-native-modal": "^5.0.0",
+    "react-native-navigation": "^1.1.386",
     "react-native-parallax-scroll-view": "^0.20.1",
     "react-native-prompt": "^1.0.0",
     "react-native-push-notification": "^3.0.2",
@@ -49,6 +57,8 @@
     "react-native-responsive-dimensions": "^1.0.2",
     "react-native-router-flux": "^4.0.0-beta.28",
     "react-native-vector-icons": ">=4.0.0",
+    "react-navigation": "^1.1.2",
+    "react-navigation-redux-helpers": "^1.0.1",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-form": "^7.2.1",
@@ -57,6 +67,7 @@
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
     "rn-prompt": "^1.0.2",
+    "rnpm": "^1.9.0",
     "subscriptions-transport-ws": "^0.9.4",
     "tcomb-form-native": "^0.6.11",
     "whatwg-fetch": "^2.0.3"

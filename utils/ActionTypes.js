@@ -1,12 +1,13 @@
-export const FETCHING_USER = 'FETCHING_USER';
-export const FETCHING_USER_SUCCESS = 'FETCHING_USER_SUCCESS';
-export const FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE';
-export const FETCHING_EMAIL = 'FETCHING_EMAIL';
-export const FETCHING_EMAIL_SUCCESS = 'FETCHING_EMAIL_SUCCESS';
-export const FETCHING_EMAIL_FAILURE = 'FETCHING_EMAIL_FAILURE';
-export const FETCHING_EMAIL_TOKEN = 'FETCHING_EMAIL_TOKEN';
-export const FETCHING_EMAIL_TOKEN_SUCCESS = 'FETCHING_EMAIL_TOKEN_SUCCESS';
-export const FETCHING_EMAIL_TOKEN_FAILURE = 'FETCHING_EMAIL_TOKEN_FAILURE';
+/*
+    Redux constants to determine various states.
+*/
+export const FETCHING = 'FETCHING';
+export const FETCHING_SUCCESS = 'FETCHING_SUCCESS';
+export const FETCHING_FAILURE = 'FETCHING_FAILURE';
+
+/* 
+    These are different from the state. They define the type of message sent.
+*/
 export const MESSAGE = 'MESSAGE';
 export const POLL = 'POLL';
 export const GRAPH = 'GRAPH';

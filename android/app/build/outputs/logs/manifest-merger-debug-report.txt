@@ -56,6 +56,7 @@ ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:15:5-8
 		ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:15:22-78
 uses-sdk
 ADDED from /home/wassan/mate-app/android/app/src/main/AndroidManifest.xml:17:5-19:41
+MERGED from [MATE:react-native-realtime-pusher:unspecified] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/MATE/react-native-realtime-pusher/unspecified/AndroidManifest.xml:8:5-10:41
 MERGED from [MATE:react-native-push-notification:unspecified] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/MATE/react-native-push-notification/unspecified/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-gcm:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.0.4/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/11.0.4/AndroidManifest.xml:17:5-43

@@ -1,3 +1,8 @@
+/*
+  Default StyleSheet for the whole application.
+  Todo task: Separate all the styles from the application here.
+*/
+
 import {StyleSheet,Platform} from 'react-native'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 const Styles = StyleSheet.create({

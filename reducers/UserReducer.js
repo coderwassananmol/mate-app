@@ -1,24 +1,23 @@
-import {FETCHING_USER, FETCHING_USER_SUCCESS, FETCHING_USER_FAILURE, FETCHING_EMAIL, FETCHING_EMAIL_SUCCESS, FETCHING_EMAIL_FAILURE} from '../utils/ActionTypes';
-
+import {FETCHING, FETCHING_SUCCESS, FETCHING_FAILURE} from '../utils/ActionTypes'
 const initialState = {
   isFetching : null,
-  data : [],
+  data : null,
   hasError : false,
   errorMessage : null
 }
 
 export default function(state = initialState, action) {
   switch(action.type) {
-    case FETCHING_USER:
+    case FETCHING:
       return Object.assign({},state, {
         isFetching : true,
-        data : [],
+        data : null,
         hasError : false,
         errorMessage : null
       });
       break;
 
-    case FETCHING_USER_SUCCESS:
+    case FETCHING_SUCCESS:
       return Object.assign({},state, {
         isFetching : false,
         data : action.payload,
@@ -27,7 +26,7 @@ export default function(state = initialState, action) {
       });
       break;
 
-    case FETCHING_USER_FAILURE:
+    case FETCHING_FAILURE:
       return Object.assign({},state, {
         isFetching : false,
         data : [],

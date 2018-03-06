@@ -258,7 +258,6 @@ class Team extends React.Component {
 
         render() {            
             return (
-                <Root>
                     <Container>
                     <Header searchBar rounded backgroundColor='#2c70dd' iosBarStyle='dark-content' androidStatusBarColor='#56a2ce'>
                     <Item style={{display: this.state.searchBar}}>
@@ -406,7 +405,6 @@ class Team extends React.Component {
                         </FooterTab>
                     </Footer>   
                     </Container>
-                    </Root>
             );
         }
     }
