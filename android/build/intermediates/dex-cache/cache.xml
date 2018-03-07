@@ -3,12 +3,39 @@
 
     <item
         is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="618f75fe11febf263e3234c7da7dc892232a5608">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-27.0.2_9fe275d415047b96ecfc30868aa65d47143831a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/jars/libs/infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="9809e90be788acdb479b2b44e2112f3295a03068">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_22e084b3177107533ecd66880a900964006204f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b432e82447a3af781e927b9ba0bbb9fe2a496d4a">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-27.0.2_66ab912c24c0acab288782d1d0bb5b054aa16709.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-common/4.31.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e3b8ecc558c6deeb90eb3934c1c715128ab26dcd">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-common-4.31.0_60e72c957dab376002edac0f943a802de6e639a2.jar" />
     </item>
     <item
         is-multidex="false"
@@ -21,39 +48,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.2.0_d2accbccebc9533c04dc70480d93fcf7ba86028f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/wassan/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_f04bdf9689f881b6edc367ef80a4fda3186a02fa.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/root/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_8cb1dcf68d89b3835f6b8620276bad0ce2e75a94.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.2.0_23ef3f43619d5033fdeaf6d2882c79953b6796db.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,12 +93,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/jars/classes.jar"
+        jar="/root/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.2.0_99c8819df6fd45020d779ab749770844f6213f17.jar" />
+        revision="26.0.2"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/common-1.0.0_9acd00f8684b999f23bc1219658cc93a0b271f3d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -147,6 +147,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/root/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.3/7d7f60c4783872861222166f6164215f8951c7b1/common-1.0.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7d7f60c4783872861222166f6164215f8951c7b1">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/common-1.0.3_9fc00c5efac20f053af910e04493d5ad99535492.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/me.leolin/ShortcutBadger/1.1.8/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -162,15 +171,6 @@
         revision="23.0.1"
         sha1="8f615bca00639150c9eb6175d4b5471193f70794">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_1107b7cc4a6edd8286755c36cd8dc91c473b587f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.2.0_745e09046b4697bbefe0524bcb4be317f42e5615.jar" />
     </item>
     <item
         is-multidex="false"
@@ -192,21 +192,21 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/android.arch.lifecycle/runtime/1.0.3/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7cc5473b9cf4ea159a263cd477fb3ecb2987b96">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/android.arch.lifecycle-runtime-1.0.3_9274dc92370fcb2957cc177d7235f809e9979a0b.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/root/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.5/6b262da268f8ad9eff941b25503a9198f0a0ac93/slf4j-api-1.7.5.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="6b262da268f8ad9eff941b25503a9198f0a0ac93">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/slf4j-api-1.7.5_e941eae711971863a76d57c1a0afa69f5de977d4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.2.0_745e09046b4697bbefe0524bcb4be317f42e5615.jar" />
     </item>
     <item
         is-multidex="false"
@@ -228,30 +228,21 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-messenger/4.31.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2482bfd874e8b3927f4141105674ad392ff83698">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-messenger-4.31.0_f5fcaf2aa299d4934d272de22f479c7232774662.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/root/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="6975da39a7040257bd51d21a231b76c915872d38">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_7e84a58f14b03e539c66973b1348dfcc92b37959.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_7fc7519c2a88a2b1d3d49cd7695da89989ca6398.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_7fc7519c2a88a2b1d3d49cd7695da89989ca6398.jar" />
     </item>
     <item
         is-multidex="false"
@@ -273,6 +264,33 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="fe3916317a699975bcce0cba2d13fd2d8cf88922">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-27.0.2_0560def06c1e075da0b6865aed76f0e0bbdcad98.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/customtabs/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cdebcd9e0580b35115f655f8dc8ed7a66a8ef0fc">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-27.0.2_ec7cbefc53c8615df6117a528556cfdab8e65673.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-core/4.31.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="49d6e981cef2eb91ff98aa6004fadb3bd757790d">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-core-4.31.0_ae3057c1baf2585dcdef3ca223049285371754c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/root/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
@@ -288,6 +306,24 @@
         revision="23.0.1"
         sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_c1911d077ba99780a9141c052d7ff6a0b4dfdeb7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="caa03787689212c10939f308a55a8dc8a3333ed2">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-27.0.2_8b422037d8c36e8988800341f3bcd884d169ef20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_b8be5144022e8fb2366e72814320a8797abb6dae.jar" />
     </item>
     <item
         is-multidex="false"
@@ -327,12 +363,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/wassan/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/27.0.2/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_f04bdf9689f881b6edc367ef80a4fda3186a02fa.jar" />
+        sha1="ed6560f31a6a40b5965f5879d8f2eab1f68def05">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-27.0.2_0fed1777ae0a3ab70b3937e0272f18f38f840465.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-places/4.31.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="821200fa3e07f93d0ae66e4a5917db8bac69dfe1">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-places-4.31.0_7e2b0d34402976c4c70bdbd8f5641c937adda178.jar" />
     </item>
     <item
         is-multidex="false"
@@ -351,6 +396,24 @@
         revision="23.0.1"
         sha1="d2af2ef4d987d753f2e8ee2d1480ab964d5c7273">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-11.8.0_2a485959ac8b55862330c5cfaa416c2e30576273.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.0.2/b9ef4342c934a1a8b107506273dc8061662a322/support-annotations-27.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0b9ef4342c934a1a8b107506273dc8061662a322">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/support-annotations-27.0.2_e6f9b6f4cd79cd9562732e20187eecf6c4e6cc03.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ac2ce6027755bcf49442e70597bec0feb9064f68">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-27.0.2_bbd43896a037ca80012e7cb7dfa6f6f7430b6bd9.jar" />
     </item>
     <item
         is-multidex="false"
@@ -381,6 +444,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bcd0bcdef85b31a656af76e39c0c95ce70800772">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-27.0.2_c54bb7cbffa3805615d9b085c37239906de1e0d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.8.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -408,12 +480,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-login/4.31.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.2.0_23ef3f43619d5033fdeaf6d2882c79953b6796db.jar" />
+        sha1="b8b26b28aae0ba8e2db55ad9fe0ebc770530c5ef">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-login-4.31.0_4ecfc66ce950aaf4f715c0c4bf64c1c085d1a3c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.31.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b1c250352bb7bbd5ea1982ca5165f2a81f36b530">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.31.0_71b545ea00ef5fc85b4ed12f03e40d42320e2218.jar" />
     </item>
     <item
         is-multidex="false"
@@ -426,12 +507,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/jars/classes.jar"
+        jar="/root/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.3.0/73c49077166faa4c3c0059c5f583d1d7bd1475fe/core-3.3.0.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.2.0_99c8819df6fd45020d779ab749770844f6213f17.jar" />
+        sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/core-3.3.0_b561d74a94d053f08f5be0983f1911fb2b9624f5.jar" />
     </item>
     <item
         is-multidex="false"
@@ -450,15 +531,6 @@
         revision="23.0.1"
         sha1="4b7dbd963f54ff7b600c647d14ca381f110d9c9a">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-11.8.0_c1c5683205400b41ea8d9ddc63b8ee740c0353e3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.2.0_d2accbccebc9533c04dc70480d93fcf7ba86028f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -489,12 +561,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/jars/classes.jar"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/MATE/react-native-fbsdk/unspecified/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.2.0_6f08efaffc3ab11bdf042e95e252049f8254c81b.jar" />
+        revision="26.0.2"
+        sha1="4a8778dd9085a19ce58302f4263bbe754f285174">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/MATE-react-native-fbsdk-unspecified_fd1a03c4fc85cd3d5b4409d26da9b0844d3fdfde.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-share/4.31.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="95d97996ec624fca99f6b06ad6004c749259970d">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-share-4.31.0_a00b8fc29b7c1c38f5e1cf69e3688bd159f60c13.jar" />
     </item>
     <item
         is-multidex="false"
@@ -543,21 +624,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.2.0_6f08efaffc3ab11bdf042e95e252049f8254c81b.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/root/.gradle/caches/modules-2/files-2.1/com.pusher/pusher-java-client/1.5.0/eecf30fd008bd0df402737fcbd052722178769a/pusher-java-client-1.5.0.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="0eecf30fd008bd0df402737fcbd052722178769a">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/pusher-java-client-1.5.0_1694554a1f32989cf199e346c9ca96dbbaff8421.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="14bfdbf5594d4d7c320de20831849050788ab1e3">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-27.0.2_4342dded095c27e5a4264e4bbf9f2f106a69b0b7.jar" />
     </item>
     <item
         is-multidex="false"
@@ -570,12 +651,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-applinks/4.31.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.2.0_dcb4c84b4770ffc35544453a474587cf84d12baf.jar" />
+        sha1="82ea5a937ab84229fbd2f3fc8cf2a72cbdf0ee0f">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-applinks-4.31.0_3d109c2103cd2bf72a1f5886f9aec591ac21f3f2.jar" />
     </item>
     <item
         is-multidex="false"
@@ -630,15 +711,6 @@
         revision="26.0.2"
         sha1="d2af2ef4d987d753f2e8ee2d1480ab964d5c7273">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-11.8.0_2a485959ac8b55862330c5cfaa416c2e30576273.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.2.0_dcb4c84b4770ffc35544453a474587cf84d12baf.jar" />
     </item>
     <item
         is-multidex="false"
@@ -651,6 +723,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="04cd0cacbedcb338f64665b88bad64d145325fbd">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-27.0.2_e1d615f16a91eda66d3ee1dc4fec121e57f599af.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/root/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
         jumboMode="false"
         optimize="true"
@@ -666,6 +747,15 @@
         revision="26.0.2"
         sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
         <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_60cb5575fa0641255a19eb36517e9adbc32629e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/27.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="25c8cb628374f9a2d59ff9e1172753751e9a9f84">
+        <dex dex="/home/wassan/mate-app/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-27.0.2_0ef13cbf389bb618414156b3df4815240fa9c3fe.jar" />
     </item>
 
 </items>

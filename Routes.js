@@ -52,12 +52,14 @@ import Hotel from './routes/Hotel';
       * Code
 */
 import Code from './routes/BottomTeamMenu/Code'
+import Facebook from './routes/Marketing/Facebook';
+import MarketingScreen from './routes/Marketing/MarketingScreen';
 const Routes = () => (
   <Router>
     <Scene key="root">
       <Scene key="Login" component={Login} hideNavBar />
       <Scene key="EmailRegistration" component={EmailRegistration} hideNavBar />
-      <Scene key="Registration" component={Registration} hideNavBar type="reset" initial/>
+      <Scene key="Registration" component={Registration} hideNavBar type="reset" />
       <Scene key="EmailToken" component={EmailToken} hideNavBar />
       <Scene key="Team" component={Team} hideNavBar/>
       <Scene key="Client" component={Client} title="Welcome, user!"/>
@@ -68,6 +70,8 @@ const Routes = () => (
       <Scene key="TeamReminder" component={TeamReminder} hideNavBar/>
       <Scene key="ToDo" component={Todo} hideNavBar/>
       <Scene key="Code" component={Code} hideNavBar/>
+      <Scene key="Facebook" component={Facebook} hideNavBar initial/>
+      <Scene key="MarketingScreen" component={MarketingScreen} hideNavBar />
     </Scene>
   </Router>
 );

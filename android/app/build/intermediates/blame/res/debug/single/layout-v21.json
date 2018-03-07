@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.2/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout-v21/bottom_navigation_small_item.xml",
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.aurelhubert/ahbottomnavigation/2.0.6/res/layout-v21/bottom_navigation_small_item.xml"
+    },
+    {
+        "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.2/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.2/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.2/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/wassan/mate-app/android/app/build/intermediates/res/merged/debug/layout-v21/bottom_navigation_item.xml",
+        "source": "/home/wassan/mate-app/android/app/build/intermediates/exploded-aar/com.aurelhubert/ahbottomnavigation/2.0.6/res/layout-v21/bottom_navigation_item.xml"
+    }
+]

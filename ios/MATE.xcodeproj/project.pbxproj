@@ -60,6 +60,9 @@
 		9FE058C4F9FC4E668B64BD81 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D033184319A4E36826E3F00 /* Roboto-Light.ttf */; };
 		26ED1BE51AD14748AF715D47 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55C141B1C26A45DA9019EF60 /* OpenSans-Regular.ttf */; };
 		EA31E26F1C3745E1A66A16F5 /* libRCTFBSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FE47C4CFEC4F4A8F8E0EF2 /* libRCTFBSDK.a */; };
+		6EB96F28B31D4E3BB6F90607 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8002923232448CC9ADF0618 /* Billabong.ttf */; };
+		C3DA9091A61C44DAA3E6B424 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6F749FE8436C48118CFD5E73 /* MyriadPro-Regular.otf */; };
+		A75D101BA29B4DAF8EC981D5 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A42FF4A95B1D4BACB9302B9B /* Roboto-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,6 +317,9 @@
 		55C141B1C26A45DA9019EF60 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1D91AC3CF26141D78B595DAC /* RCTFBSDK.xcodeproj */ = {isa = PBXFileReference; name = "RCTFBSDK.xcodeproj"; path = "../node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		F4FE47C4CFEC4F4A8F8E0EF2 /* libRCTFBSDK.a */ = {isa = PBXFileReference; name = "libRCTFBSDK.a"; path = "libRCTFBSDK.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		C8002923232448CC9ADF0618 /* Billabong.ttf */ = {isa = PBXFileReference; name = "Billabong.ttf"; path = "../assets/fonts/Billabong.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6F749FE8436C48118CFD5E73 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; name = "MyriadPro-Regular.otf"; path = "../assets/fonts/MyriadPro-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A42FF4A95B1D4BACB9302B9B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -586,6 +592,9 @@
 				88240DAB713D41F8951B90FA /* Bellefair-Regular.otf */,
 				3D033184319A4E36826E3F00 /* Roboto-Light.ttf */,
 				55C141B1C26A45DA9019EF60 /* OpenSans-Regular.ttf */,
+				C8002923232448CC9ADF0618 /* Billabong.ttf */,
+				6F749FE8436C48118CFD5E73 /* MyriadPro-Regular.otf */,
+				A42FF4A95B1D4BACB9302B9B /* Roboto-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -981,6 +990,9 @@
 				D54D6234A5A841ED89E9A039 /* Bellefair-Regular.otf in Resources */,
 				9FE058C4F9FC4E668B64BD81 /* Roboto-Light.ttf in Resources */,
 				26ED1BE51AD14748AF715D47 /* OpenSans-Regular.ttf in Resources */,
+				6EB96F28B31D4E3BB6F90607 /* Billabong.ttf in Resources */,
+				C3DA9091A61C44DAA3E6B424 /* MyriadPro-Regular.otf in Resources */,
+				A75D101BA29B4DAF8EC981D5 /* Roboto-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1114,9 +1126,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MATE.app/MATE";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1143,9 +1152,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MATE.app/MATE";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1228,9 +1234,6 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1266,9 +1269,6 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1299,9 +1299,6 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1326,9 +1323,6 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;
