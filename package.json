@@ -45,7 +45,7 @@
     "pusher-js": "^4.2.2",
     "react": "16.0.0",
     "react-apollo": "^2.0.4",
-    "react-native": "0.51.0",
+    "react-native": "0.70.6",
     "react-native-fbsdk": "^0.7.0",
     "react-native-keyboard-aware-scroll-view": "^0.4.3",
     "react-native-modal": "^5.0.0",
